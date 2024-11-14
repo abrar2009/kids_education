@@ -17,6 +17,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    print('Home Page');
+
     return Scaffold(
       body: Stack(
         children: [
@@ -37,7 +39,8 @@ class _HomePageState extends State<HomePage> {
           // Dynamic Top Image that appears when a country is selected
           if (selectedTopImage != null) ...[
             Align(
-              alignment: const Alignment(0.4, -0.3), // Adjust alignment as needed
+              alignment:
+                  const Alignment(0.4, -0.3), // Adjust alignment as needed
               child: SizedBox(
                 width: 300, // Adjust width as needed
                 child: Image.asset(
@@ -62,9 +65,11 @@ class _HomePageState extends State<HomePage> {
           ),
           // Animated White Box with rounded right corners
           AnimatedPositioned(
-            duration: const Duration(milliseconds: 500), // Duration of animation
+            duration:
+                const Duration(milliseconds: 500), // Duration of animation
             left: _animateBoxLeft
-                ? -MediaQuery.of(context).size.width * 0.38 // Move left when transitioning
+                ? -MediaQuery.of(context).size.width *
+                    0.38 // Move left when transitioning
                 : 0, // Default position
             top: 0,
             bottom: 0,
@@ -130,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                           countryListItem(
                             'India',
                             'assets/images/india.png',
-                                () => onCountrySelected(
+                            () => onCountrySelected(
                                 'India',
                                 'assets/images/indiaBG.png',
                                 'assets/images/ladyInSaree.gif',
@@ -139,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                           countryListItem(
                             'USA',
                             'assets/images/usa.png',
-                                () => onCountrySelected(
+                            () => onCountrySelected(
                                 'USA',
                                 'assets/images/usaBG.png',
                                 'assets/images/usaGirl.png',
@@ -148,37 +153,65 @@ class _HomePageState extends State<HomePage> {
                           countryListItem(
                             'Russia',
                             'assets/images/russia.png',
-                                () => onCountrySelected('Russia', 'assets/images/russiaBG.png', 'assets/images/russiaGirl.gif', 'assets/images/russiaCloud.png'),
+                            () => onCountrySelected(
+                                'Russia',
+                                'assets/images/russiaBG.png',
+                                'assets/images/russiaGirl.gif',
+                                'assets/images/russiaCloud.png'),
                           ),
                           countryListItem(
                             'Japan',
                             'assets/images/japan.png',
-                                () => onCountrySelected('Japan', 'assets/images/japanBG.png', 'assets/images/japanGirl.gif', 'assets/images/japanTopImage.png'),
+                            () => onCountrySelected(
+                                'Japan',
+                                'assets/images/japanBG.png',
+                                'assets/images/japanGirl.gif',
+                                'assets/images/japanTopImage.png'),
                           ),
                           countryListItem(
                             'United Kingdom',
                             'assets/images/uk.png',
-                                () => onCountrySelected('United Kingdom', 'assets/images/ukBG.png', 'assets/images/ukBoy.gif', 'assets/images/ukTopImage.png'),
+                            () => onCountrySelected(
+                                'United Kingdom',
+                                'assets/images/ukBG.png',
+                                'assets/images/ukBoy.gif',
+                                'assets/images/ukTopImage.png'),
                           ),
                           countryListItem(
                             'Italy',
                             'assets/images/italy.png',
-                                () => onCountrySelected('Italy', 'assets/images/italyBG.png', 'assets/images/italyBoy.gif', 'assets/images/italyTopImage.png'),
+                            () => onCountrySelected(
+                                'Italy',
+                                'assets/images/italyBG.png',
+                                'assets/images/italyBoy.gif',
+                                'assets/images/italyTopImage.png'),
                           ),
                           countryListItem(
                             'Kenya',
                             'assets/images/kenya.png',
-                                () => onCountrySelected('Kenya', 'assets/images/kenyaBG.png', 'assets/images/kenyaBoy.gif', 'assets/images/kenyaTopImage.png'),
+                            () => onCountrySelected(
+                                'Kenya',
+                                'assets/images/kenyaBG.png',
+                                'assets/images/kenyaBoy.gif',
+                                'assets/images/kenyaTopImage.png'),
                           ),
                           countryListItem(
                             'Brazil',
                             'assets/images/brazil.png',
-                                () => onCountrySelected('Brazil', 'assets/images/brazilBG.png', 'assets/images/brazilBoy.gif', 'assets/images/brazilTopImage.png'),
+                            () => onCountrySelected(
+                                'Brazil',
+                                'assets/images/brazilBG.png',
+                                'assets/images/brazilBoy.gif',
+                                'assets/images/brazilTopImage.png'),
                           ),
                           countryListItem(
                             'China',
                             'assets/images/china.png',
-                                () => onCountrySelected('China', 'assets/images/chinaBG.png', 'assets/images/ukBoy.gif', 'assets/images/chinaTopImage.png'),
+                            () => onCountrySelected(
+                                'China',
+                                'assets/images/chinaBG.png',
+                                'assets/images/ukBoy.gif',
+                                'assets/images/chinaTopImage.png'),
                           ),
                         ],
                       ),
@@ -195,7 +228,8 @@ class _HomePageState extends State<HomePage> {
               child: GestureDetector(
                 onTap: () {
                   setState(() {
-                    _animateBoxLeft = true; // Start the animation when navigating
+                    _animateBoxLeft =
+                        true; // Start the animation when navigating
                   });
                   Future.delayed(const Duration(milliseconds: 500), () {
                     Navigator.push(
@@ -219,7 +253,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ).then((_) {
                       setState(() {
-                        _animateBoxLeft = false; // Reset animation when coming back
+                        _animateBoxLeft =
+                            false; // Reset animation when coming back
                       });
                     });
                   });
@@ -241,17 +276,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   // Handle country selection and update the background and boy image
-  void onCountrySelected(String country, String backgroundImage, String boyImage, String topImage) {
+  void onCountrySelected(String country, String backgroundImage,
+      String boyImage, String topImage) {
     setState(() {
       selectedCountry = country;
-      selectedBackgroundImage = backgroundImage; // Update the background image based on selection
+      selectedBackgroundImage =
+          backgroundImage; // Update the background image based on selection
       selectedBoyImage = boyImage; // Update the boy image based on selection
       selectedTopImage = topImage; // Update the top image based on selection
     });
   }
 
   // List Item with country name and image
-  Widget countryListItem(String countryName, String assetPath, VoidCallback? onTap) {
+  Widget countryListItem(
+      String countryName, String assetPath, VoidCallback? onTap) {
     final bool isSelected = selectedCountry == countryName;
 
     return GestureDetector(
@@ -262,17 +300,18 @@ class _HomePageState extends State<HomePage> {
           duration: const Duration(milliseconds: 300),
           decoration: BoxDecoration(
             color: isSelected ? Colors.white : Colors.white,
-            border: Border.all(color: isSelected ? Colors.black12 : Colors.white, width: 0.5),
+            border: Border.all(
+                color: isSelected ? Colors.black12 : Colors.white, width: 0.5),
             borderRadius: BorderRadius.circular(12),
             boxShadow: isSelected
                 ? [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 8,
-                offset: const Offset(0, 4),
-              ),
-            ]
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 8,
+                      offset: const Offset(0, 4),
+                    ),
+                  ]
                 : [],
           ),
           child: Padding(
@@ -304,5 +343,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-

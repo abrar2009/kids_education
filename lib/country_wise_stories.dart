@@ -1,3 +1,4 @@
+import 'package:bounce/bounce.dart';
 import 'package:flutter/material.dart';
 import 'Backend/country_data.dart';
 import 'homepage.dart';
@@ -15,7 +16,8 @@ class CountryWiseStoriesWidget extends StatefulWidget {
   });
 
   @override
-  State<CountryWiseStoriesWidget> createState() => _CountryWiseStoriesWidgetState();
+  State<CountryWiseStoriesWidget> createState() =>
+      _CountryWiseStoriesWidgetState();
 }
 
 class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
@@ -26,9 +28,9 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
 
   // Sample data for demonstration
 
-
   @override
   void initState() {
+    print('country');
     super.initState();
   }
 
@@ -37,7 +39,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
     _pageController.dispose();
     super.dispose();
   }
-  
+
   String wrapText(String text) {
     List<String> words = text.split(' ');
     //int wordsPerLine = 6; // default is 4 words per line
@@ -46,12 +48,15 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
 
     // If the sentence has exactly 4 words, put the first 3 words on the first line and the last word on the second line
     if (words.length == 4 || words.length == 5) {
-      lines.add(words.sublist(0, 3).join(' ')); // First 3 words in the first line
-      lines.add(words.sublist(3).join(' '));    // Remaining word in the second line
+      lines.add(
+          words.sublist(0, 3).join(' ')); // First 3 words in the first line
+      lines
+          .add(words.sublist(3).join(' ')); // Remaining word in the second line
     } else {
       // For other cases, group words with at least 4 per line
       for (int i = 0; i < words.length; i += wordsPerLine) {
-        int end = (i + wordsPerLine < words.length) ? i + wordsPerLine : words.length;
+        int end =
+            (i + wordsPerLine < words.length) ? i + wordsPerLine : words.length;
         lines.add(words.sublist(i, end).join(' '));
       }
     }
@@ -59,9 +64,9 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
     return lines.join('\n'); // Join lines with line breaks
   }
 
-
   // Function to measure the text size for a given text style and max width
-  Size _measureText(String text, TextStyle style, {double maxWidth = double.infinity}) {
+  Size _measureText(String text, TextStyle style,
+      {double maxWidth = double.infinity}) {
     final TextPainter textPainter = TextPainter(
       text: TextSpan(text: text, style: style),
       textDirection: TextDirection.ltr,
@@ -84,11 +89,14 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
   @override
   Widget build(BuildContext context) {
     // Fetch content based on the selected country
-    List<Map<String, String>> currentCountryContent = countryContent[widget.countryName] ?? [];
+    List<Map<String, String>> currentCountryContent =
+        countryContent[widget.countryName] ?? [];
 
-    double selectedImageHeight = widget.countryName.toLowerCase() == '' ? 280 : 400;
+    double selectedImageHeight =
+        widget.countryName.toLowerCase() == '' ? 280 : 400;
 
-    String wrappedText = wrapText(currentCountryContent[_currentPage]['cloudText']!);
+    String wrappedText =
+        wrapText(currentCountryContent[_currentPage]['cloudText']!);
 
     // Measure the wrapped text size for the current page
     final cloudTextSize = _measureText(
@@ -133,7 +141,8 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                       // Cloud Text
                       Align(
                         //alignment: AlignmentDirectional(-0.11, -0.3),
-                        alignment: _parseAlignment(currentCountryContent[index]['cloudAlignment']!),
+                        alignment: _parseAlignment(
+                            currentCountryContent[index]['cloudAlignment']!),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Stack(
@@ -151,9 +160,11 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                               ),
                               // Overlay Text on Cloud Image
                               Padding(
-                                padding: const EdgeInsets.only(bottom: 20, right: 8),
+                                padding:
+                                    const EdgeInsets.only(bottom: 20, right: 8),
                                 child: Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16, vertical: 10),
                                   width: cloudWidth,
                                   child: Text(
                                     //currentCountryContent[index]['cloudText']!,
@@ -177,12 +188,14 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                       // Character Image
                       // Character Image
                       Align(
-                        alignment: _parseAlignment(currentCountryContent[index]['characterAlignment']!),
+                        alignment: _parseAlignment(currentCountryContent[index]
+                            ['characterAlignment']!),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Transform(
                             alignment: Alignment.center,
-                            transform: Matrix4.identity()..scale(-1.0, 1.0), // Mirror horizontally
+                            transform: Matrix4.identity()
+                              ..scale(-1.0, 1.0), // Mirror horizontally
                             child: Image.asset(
                               currentCountryContent[index]['characterImage']!,
                               height: selectedImageHeight,
@@ -209,52 +222,59 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
               ),
 
               // Next Button
-              Positioned(
-                right: 20,
-                top: MediaQuery.of(context).size.height / 2,
-                child: GestureDetector(
-                  onTap: () {
-                    if (_currentPage < currentCountryContent.length - 1) {
-                      _pageController.nextPage(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeIn,
-                      );
-                    }
-                  },
-                  child: Image.asset(
-                    'assets/images/next_btn.png',
-                    width: 100,
-                    height: 100,
-                  ),
-                ),
-              ),
+              currentCountryContent.length - 1 == _currentPage
+                  ? SizedBox()
+                  : Positioned(
+                      right: 20,
+                      top: MediaQuery.of(context).size.height / 2,
+                      child: Bounce(
+                        // filterQuality:FilterQuality.high,
+                        onTap: () {
+                          print(_currentPage);
+                          print(currentCountryContent.length);
+                          if (_currentPage < currentCountryContent.length - 1) {
+                            _pageController.nextPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeIn,
+                            );
+                          }
+                        },
+                        child: Image.asset(
+                          'assets/images/next_btn.png',
+                          width: 100,
+                          height: 100,
+                        ),
+                      ),
+                    ),
 
               // Previous Button
               if (_currentPage > 0)
-              Positioned(
-                left: 20,
-                top: MediaQuery.of(context).size.height / 2,
-                child: GestureDetector(
-                  onTap: () {
-                    if (_currentPage > 0) {
-                      _pageController.previousPage(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeIn,
-                      );
-                    }
-                  },
-                  child: Image.asset(
-                    'assets/images/previous_btn.png',
-                    width: 100,
-                    height: 100,
+                Positioned(
+                  left: 20,
+                  top: MediaQuery.of(context).size.height / 2,
+                  child: Bounce(
+                    onTap: () {
+                      print(_currentPage);
+                      print(currentCountryContent.length);
+                      if (_currentPage > 0) {
+                        _pageController.previousPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeIn,
+                        );
+                      }
+                    },
+                    child: Image.asset(
+                      'assets/images/previous_btn.png',
+                      width: 100,
+                      height: 100,
+                    ),
                   ),
                 ),
-              ),
 
               // Back Button to Home Page
               Align(
                 alignment: const AlignmentDirectional(-0.99, -0.9),
-                child: GestureDetector(
+                child: Bounce(
                   onTap: () {
                     Navigator.of(context).pushReplacement(
                       SlideFromLeftPageRoute(
@@ -287,23 +307,24 @@ class SlideFromLeftPageRoute<T> extends PageRouteBuilder<T> {
 
   SlideFromLeftPageRoute({required this.page})
       : super(
-    pageBuilder: (context, animation, secondaryAnimation) => page,
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      // Start from the left of the screen
-      const begin = Offset(-1.0, 0.0);
-      const end = Offset.zero;
-      const curve = Curves.easeInOut;
+          pageBuilder: (context, animation, secondaryAnimation) => page,
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            // Start from the left of the screen
+            const begin = Offset(-1.0, 0.0);
+            const end = Offset.zero;
+            const curve = Curves.easeInOut;
 
-      // Apply the animation
-      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-      var offsetAnimation = animation.drive(tween);
+            // Apply the animation
+            var tween =
+                Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+            var offsetAnimation = animation.drive(tween);
 
-      return SlideTransition(
-        position: offsetAnimation,
-        child: _buildWhiteBox(child),
-      );
-    },
-  );
+            return SlideTransition(
+              position: offsetAnimation,
+              child: _buildWhiteBox(child),
+            );
+          },
+        );
 
   // Build the white box with rounded corners on the right side
   static Widget _buildWhiteBox(Widget child) {
