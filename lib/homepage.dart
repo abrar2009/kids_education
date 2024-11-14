@@ -39,13 +39,12 @@ class _HomePageState extends State<HomePage> {
           // Dynamic Top Image that appears when a country is selected
           if (selectedTopImage != null) ...[
             Align(
-              alignment:
-                  const Alignment(0.4, -0.3), // Adjust alignment as needed
+              alignment: const Alignment(0.4, 0), // Adjust alignment as needed
               child: SizedBox(
                 width: 300, // Adjust width as needed
                 child: Image.asset(
                   selectedTopImage!,
-                  height: 200, // Adjust height as needed
+                  height: 400, // Adjust height as needed
                   fit: BoxFit.contain,
                 ),
               ),
@@ -55,7 +54,7 @@ class _HomePageState extends State<HomePage> {
           Align(
             alignment: const Alignment(0.9, 0.9),
             child: SizedBox(
-              width: 500,
+              width: 600,
               child: Image.asset(
                 selectedBoyImage,
                 height: 400,

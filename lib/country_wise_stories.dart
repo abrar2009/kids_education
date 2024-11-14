@@ -107,7 +107,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
 
     // Adjust the cloud size based on text size and number of lines
     int numOfLines = wrappedText.split('\n').length;
-    double cloudWidth = cloudTextSize.width + 120;
+    double cloudWidth = cloudTextSize.width + 200;
     //double cloudHeight = cloudTextSize.height + 180;
     double cloudHeight = cloudTextSize.height + (numOfLines * 30) + 100;
 
@@ -170,7 +170,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                                     //currentCountryContent[index]['cloudText']!,
                                     wrappedText,
                                     style: const TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 24,
                                       fontWeight: FontWeight.w400,
                                       color: Colors.black,
                                     ),
@@ -185,8 +185,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                           ),
                         ),
                       ),
-                      // Character Image
-                      // Character Image
+
                       Align(
                         alignment: _parseAlignment(currentCountryContent[index]
                             ['characterAlignment']!),
