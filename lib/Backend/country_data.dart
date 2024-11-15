@@ -2,8 +2,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
   'India': [
     {
       'backgroundImage': 'assets/images/indiaBG.png',
-      'cloudText':
-          'India is vibrant, diverse, and rich in culture with colorful festivals, historic landmarks, and varied landscapes.',
+      'cloudText': 'India is vibrant, diverse, and rich in culture with colorful festivals, historic landmarks, and varied landscapes.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.4,0.9',
@@ -275,8 +274,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG2.png',
-      'cloudText':
-          'Russians love reading, dancing, and have beautiful churches.',
+      'cloudText': 'Russians love reading, dancing, and have beautiful churches.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,1',
@@ -391,8 +389,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
   'Japan': [
     {
       'backgroundImage': 'assets/images/japanBG.png',
-      'cloudText':
-          'Japan is an island country known for its cool technology and old temples',
+      'cloudText': 'Japan is an island country known for its cool technology and old temples',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud2.png',
       'characterAlignment': '0.5,0.9',
@@ -996,7 +993,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'backgroundImage': 'assets/images/chinaBG.png',
       'cloudText':
           'China is famous for its Great Wall, ancient history, and cultural heritage.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud2.png',
       'characterAlignment': '0.5,0.9',
       'cloudAlignment': '0.3,-0.4',
@@ -1004,7 +1001,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     {
       'backgroundImage': 'assets/images/chinaBG.png',
       'cloudText': 'The main language of China is Mandarin Chinese.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud2.png',
       'characterAlignment': '0.5,0.9',
       'cloudAlignment': '0.3,-0.1',
@@ -1012,7 +1009,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     {
       'backgroundImage': 'assets/images/chinaBG2.png',
       'cloudText': 'Lets see the animals of China.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.1,0.9',
       'cloudAlignment': '0.2,-0.1',
@@ -1020,7 +1017,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     {
       'backgroundImage': 'assets/images/chinaBG2.png',
       'cloudText': 'The national animal of China is the giant panda.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud2.png',
       'characterAlignment': '0.65,1',
       'cloudAlignment': '0.5,-0.2',
@@ -1028,7 +1025,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     {
       'backgroundImage': 'assets/images/chinaBG2.png',
       'cloudText': 'The national bird of China is the red-crowned crane.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud2.png',
       'characterAlignment': '0.65,1',
       'cloudAlignment': '0.5,-0.2',
@@ -1036,7 +1033,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     {
       'backgroundImage': 'assets/images/chinaBG5.png',
       'cloudText': 'Lets see the food of China.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.1,0.9',
       'cloudAlignment': '0.2,-0.1',
@@ -1044,7 +1041,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     {
       'backgroundImage': 'assets/images/chinaBG5.png',
       'cloudText': 'Peking duck is a popular dish in China.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
       'cloudAlignment': '-0.5,-0.2',
@@ -1052,7 +1049,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     {
       'backgroundImage': 'assets/images/chinaBG5.png',
       'cloudText': 'Dim sum is also a well-loved traditional dish.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
       'cloudAlignment': '-0.5,-0.2',
@@ -1060,7 +1057,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     {
       'backgroundImage': 'assets/images/chinaBG3.png',
       'cloudText': 'Lets see the sport of China.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.1,0.9',
       'cloudAlignment': '0.2,-0.1',
@@ -1068,7 +1065,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     {
       'backgroundImage': 'assets/images/chinaBG3.png',
       'cloudText': 'Table tennis is considered the national sport of China.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
       'cloudAlignment': '-0.6,-0.35',
@@ -1077,7 +1074,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'backgroundImage': 'assets/images/chinaBG3.png',
       'cloudText':
           'China consistently dominates the sport of table tennis at the Olympics.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
       'cloudAlignment': '-0.6,-0.35',
@@ -1085,7 +1082,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     {
       'backgroundImage': 'assets/images/chinaBG4.png',
       'cloudText': 'Lets see the festivals of China.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.1,0.9',
       'cloudAlignment': '0.25,-0.35',
@@ -1094,7 +1091,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'backgroundImage': 'assets/images/chinaBG4.png',
       'cloudText':
           'The Chinese New Year, also known as Spring Festival, is the most famous festival.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
       'cloudAlignment': '-0.6,-0.35',
@@ -1103,7 +1100,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'backgroundImage': 'assets/images/chinaBG4.png',
       'cloudText':
           'The Mid-Autumn Festival is another important celebration in China.',
-      'characterImage': 'assets/images/ukBoy.gif',
+      'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
       'cloudAlignment': '-0.6,-0.35',

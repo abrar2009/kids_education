@@ -38,8 +38,73 @@ class _HomePageState extends State<HomePage> {
           ),
           // Dynamic Top Image that appears when a country is selected
           if (selectedTopImage != null) ...[
-            Align(
-              alignment: const Alignment(0.4, 0), // Adjust alignment as needed
+            /*LayoutBuilder(
+              builder: (context, constraints) {
+                return Align(
+                  alignment: Alignment(
+                    constraints.maxWidth * 0.0003, // Adjust alignment dynamically
+                    constraints.maxHeight * -0.0001,
+                  ),
+                  child: SizedBox(
+                    width: constraints.maxWidth * 0.3, // Adjust size dynamically
+                    child: Image.asset(
+                      selectedTopImage!,
+                      height: constraints.maxHeight * 0.5,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                );
+              },
+            ),*/
+            LayoutBuilder(
+              builder: (context, constraints) {
+                double alignmentX;
+                double alignmentY;
+                double imageWidthFactor;
+                double imageHeightFactor;
+
+                // Handle specific resolutions or aspect ratios
+                if (constraints.maxWidth <= 2560 && constraints.maxHeight <= 1600) {
+                  // For 2560x1600 resolution
+                  alignmentX = 0.3;
+                  alignmentY = -0.2;
+                  imageWidthFactor = 0.3;
+                  imageHeightFactor = 0.5;
+                } else if (constraints.maxWidth <= 1600 && constraints.maxHeight <= 2560) {
+                  // For 1600x2560 resolution
+                  alignmentX = 0.2;
+                  alignmentY = -0.6;
+                  imageWidthFactor = 0.4;
+                  imageHeightFactor = 0.6;
+                } else if (constraints.maxWidth >= 1000 && constraints.maxWidth <= 1500) {
+                  // For iPads or similar-sized devices
+                  alignmentX = 0.4;
+                  alignmentY = -0.4;
+                  imageWidthFactor = 0.35;
+                  imageHeightFactor = 0.45;
+                } else {
+                  // Default case for other resolutions
+                  alignmentX = 0.0;
+                  alignmentY = 0.0;
+                  imageWidthFactor = 0.3;
+                  imageHeightFactor = 0.5;
+                }
+
+                return Align(
+                  alignment: Alignment(alignmentX, alignmentY),
+                  child: SizedBox(
+                    width: constraints.maxWidth * imageWidthFactor,
+                    child: Image.asset(
+                      selectedTopImage!,
+                      height: constraints.maxHeight * imageHeightFactor,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                );
+              },
+            ),
+            /*Align(
+              alignment: const Alignment(0.4, -0.4), // Adjust alignment as needed
               child: SizedBox(
                 width: 300, // Adjust width as needed
                 child: Image.asset(
@@ -48,10 +113,57 @@ class _HomePageState extends State<HomePage> {
                   fit: BoxFit.contain,
                 ),
               ),
-            ),
+            ),*/
           ],
           // Dynamic Boy Image
-          Align(
+          LayoutBuilder(
+            builder: (context, constraints) {
+              double alignmentX;
+              double alignmentY;
+              double imageWidth;
+              double imageHeight;
+
+              // Handle specific screen resolutions
+              if (constraints.maxWidth == 2560 && constraints.maxHeight == 1600) {
+                // For 2560x1600 resolution
+                alignmentX = 0.8; // Adjust based on design
+                alignmentY = 0.9; // Adjust based on design
+                imageWidth = 600;
+                imageHeight = 400;
+              } else if (constraints.maxWidth == 1600 && constraints.maxHeight == 2560) {
+                // For 1600x2560 resolution
+                alignmentX = 0.7;
+                alignmentY = 0.9;
+                imageWidth = 600;
+                imageHeight = 400;
+              } else if (constraints.maxWidth > 1000 && constraints.maxWidth < 1500) {
+                // For iPads or similar-sized devices
+                alignmentX = 0.9;
+                alignmentY = 0.9;
+                imageWidth = 600;
+                imageHeight = 400;
+              } else {
+                // Default case for other resolutions
+                alignmentX = 2;
+                alignmentY = 0.9;
+                imageWidth = 600;
+                imageHeight = 400;
+              }
+
+              return Align(
+                alignment: Alignment(alignmentX, alignmentY),
+                child: SizedBox(
+                  width: imageWidth,
+                  child: Image.asset(
+                    selectedBoyImage,
+                    height: imageHeight,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              );
+            },
+          ),
+          /*Align(
             alignment: const Alignment(0.9, 0.9),
             child: SizedBox(
               width: 600,
@@ -61,19 +173,17 @@ class _HomePageState extends State<HomePage> {
                 fit: BoxFit.contain,
               ),
             ),
-          ),
+          ),*/
           // Animated White Box with rounded right corners
           AnimatedPositioned(
-            duration:
-                const Duration(milliseconds: 500), // Duration of animation
+            duration: const Duration(milliseconds: 500), // Duration of animation
             left: _animateBoxLeft
-                ? -MediaQuery.of(context).size.width *
-                    0.38 // Move left when transitioning
+                ? -MediaQuery.of(context).size.width * 0.38 // Move left when transitioning
                 : 0, // Default position
             top: 0,
             bottom: 0,
             child: Container(
-              width: MediaQuery.of(context).size.width * 0.38,
+              width: MediaQuery.of(context).size.width * 0.45,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -209,7 +319,7 @@ class _HomePageState extends State<HomePage> {
                             () => onCountrySelected(
                                 'China',
                                 'assets/images/chinaBG.png',
-                                'assets/images/ukBoy.gif',
+                                'assets/images/chinaGirl.gif',
                                 'assets/images/chinaTopImage.png'),
                           ),
                         ],
@@ -227,8 +337,7 @@ class _HomePageState extends State<HomePage> {
               child: GestureDetector(
                 onTap: () {
                   setState(() {
-                    _animateBoxLeft =
-                        true; // Start the animation when navigating
+                    _animateBoxLeft = true; // Start the animation when navigating
                   });
                   Future.delayed(const Duration(milliseconds: 500), () {
                     Navigator.push(
@@ -252,8 +361,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ).then((_) {
                       setState(() {
-                        _animateBoxLeft =
-                            false; // Reset animation when coming back
+                        _animateBoxLeft = false; // Reset animation when coming back
                       });
                     });
                   });
@@ -279,16 +387,14 @@ class _HomePageState extends State<HomePage> {
       String boyImage, String topImage) {
     setState(() {
       selectedCountry = country;
-      selectedBackgroundImage =
-          backgroundImage; // Update the background image based on selection
+      selectedBackgroundImage = backgroundImage; // Update the background image based on selection
       selectedBoyImage = boyImage; // Update the boy image based on selection
       selectedTopImage = topImage; // Update the top image based on selection
     });
   }
 
   // List Item with country name and image
-  Widget countryListItem(
-      String countryName, String assetPath, VoidCallback? onTap) {
+  Widget countryListItem(String countryName, String assetPath, VoidCallback? onTap) {
     final bool isSelected = selectedCountry == countryName;
 
     return GestureDetector(

@@ -56,7 +56,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
       // For other cases, group words with at least 4 per line
       for (int i = 0; i < words.length; i += wordsPerLine) {
         int end =
-            (i + wordsPerLine < words.length) ? i + wordsPerLine : words.length;
+        (i + wordsPerLine < words.length) ? i + wordsPerLine : words.length;
         lines.add(words.sublist(i, end).join(' '));
       }
     }
@@ -86,218 +86,274 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
     return Alignment.center; // Default alignment
   }
 
+
   @override
   Widget build(BuildContext context) {
-    // Fetch content based on the selected country
-    List<Map<String, String>> currentCountryContent =
-        countryContent[widget.countryName] ?? [];
+      // Fetch content based on the selected country
+      List<Map<String, String>> currentCountryContent = countryContent[widget.countryName] ?? [];
 
-    double selectedImageHeight =
-        widget.countryName.toLowerCase() == '' ? 280 : 400;
+      double selectedImageHeight =
+      widget.countryName.toLowerCase() == '' ? 280 : 400;
 
-    String wrappedText =
-        wrapText(currentCountryContent[_currentPage]['cloudText']!);
+      String wrappedText = wrapText(currentCountryContent[_currentPage]['cloudText']!);
 
-    // Measure the wrapped text size for the current page
-    final cloudTextSize = _measureText(
-      wrappedText,
-      const TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
-      maxWidth: MediaQuery.of(context).size.width * 0.3,
-    );
+      // Measure the wrapped text size for the current page
+      final cloudTextSize = _measureText(
+        wrappedText,
+        const TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+        maxWidth: MediaQuery.of(context).size.width * 0.3,
+      );
 
-    // Adjust the cloud size based on text size and number of lines
-    int numOfLines = wrappedText.split('\n').length;
-    double cloudWidth = cloudTextSize.width + 200;
-    //double cloudHeight = cloudTextSize.height + 180;
-    double cloudHeight = cloudTextSize.height + (numOfLines * 30) + 100;
+      // Adjust the cloud size based on text size and number of lines
+      int numOfLines = wrappedText.split('\n').length;
+      double cloudWidth = cloudTextSize.width + 200;
+      double cloudHeight = cloudTextSize.height + (numOfLines * 30) + 100;
 
-    return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        key: scaffoldKey,
-        body: SafeArea(
-          top: true,
-          child: Stack(
-            children: [
-              // Dynamic Background Image
-              Image.asset(
-                currentCountryContent[_currentPage]['backgroundImage']!,
-                width: MediaQuery.sizeOf(context).width,
-                height: MediaQuery.sizeOf(context).height * 0.968,
-                fit: BoxFit.cover,
-              ),
-              // PageView for dynamic content
-              PageView.builder(
-                controller: _pageController,
-                onPageChanged: (page) {
-                  setState(() {
-                    _currentPage = page;
-                  });
-                },
-                itemCount: currentCountryContent.length,
-                itemBuilder: (context, index) {
-                  return Stack(
-                    children: [
-                      // Cloud Text
-                      Align(
-                        //alignment: AlignmentDirectional(-0.11, -0.3),
-                        alignment: _parseAlignment(
-                            currentCountryContent[index]['cloudAlignment']!),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              // Cloud Image with dynamic size
-                              SizedBox(
-                                width: cloudWidth,
-                                height: cloudHeight,
-                                child: Image.asset(
-                                  //'assets/images/Cloud.png',
-                                  currentCountryContent[index]['cloudImage']!,
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                              // Overlay Text on Cloud Image
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(bottom: 20, right: 8),
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 16, vertical: 10),
+      return GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Scaffold(
+          key: scaffoldKey,
+          body: SafeArea(
+            top: true,
+            child: Stack(
+              children: [
+                // Dynamic Background Image
+                Image.asset(
+                  currentCountryContent[_currentPage]['backgroundImage']!,
+                  width: MediaQuery.sizeOf(context).width * 1,
+                  height: MediaQuery.sizeOf(context).height * 0.968,
+                  fit: BoxFit.cover,
+                ),
+                // PageView for dynamic content
+                PageView.builder(
+                  controller: _pageController,
+                  onPageChanged: (page) {
+                    setState(() {
+                      _currentPage = page;
+                    });
+                  },
+                  itemCount: currentCountryContent.length,
+                  itemBuilder: (context, index) {
+                    String characterAlignmentString = currentCountryContent[_currentPage]['characterAlignment']!;
+                    Alignment characterAlignment = _parseAlignment(characterAlignmentString);
+                    return /*Stack(
+                      children: [
+                        // Cloud Text
+                        Align(
+                          //alignment: AlignmentDirectional(-0.11, -0.3),
+                          alignment: _parseAlignment(
+                              currentCountryContent[index]['cloudAlignment']!),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                // Cloud Image with dynamic size
+                                SizedBox(
                                   width: cloudWidth,
-                                  child: Text(
-                                    //currentCountryContent[index]['cloudText']!,
-                                    wrappedText,
-                                    style: const TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.black,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                    maxLines: 6,
-                                    overflow: TextOverflow.visible,
-                                    softWrap: true,
+                                  height: cloudHeight,
+                                  child: Image.asset(
+                                    //'assets/images/Cloud.png',
+                                    currentCountryContent[index]['cloudImage']!,
+                                    fit: BoxFit.contain,
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-
-                      Align(
-                        alignment: _parseAlignment(currentCountryContent[index]
-                            ['characterAlignment']!),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Transform(
-                            alignment: Alignment.center,
-                            transform: Matrix4.identity()
-                              ..scale(-1.0, 1.0), // Mirror horizontally
-                            child: Image.asset(
-                              currentCountryContent[index]['characterImage']!,
-                              height: selectedImageHeight,
-                              fit: BoxFit.cover,
+                                // Overlay Text on Cloud Image
+                                Padding(
+                                  padding:
+                                  const EdgeInsets.only(bottom: 20, right: 8),
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 16, vertical: 10),
+                                    width: cloudWidth,
+                                    child: Text(
+                                      //currentCountryContent[index]['cloudText']!,
+                                      wrappedText,
+                                      style: const TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.black,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      maxLines: 6,
+                                      overflow: TextOverflow.visible,
+                                      softWrap: true,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                      ),
-                      /*Align(
-                        //alignment: Alignment(-0.5, 0.9),
-                        alignment: _parseAlignment(currentCountryContent[index]['characterAlignment']!),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            currentCountryContent[index]['characterImage']!,
-                            height: selectedImageHeight,
-                            fit: BoxFit.cover,
+
+                        Align(
+                          alignment: _parseAlignment(currentCountryContent[index]
+                          ['characterAlignment']!),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Transform(
+                              alignment: Alignment.center,
+                              transform: Matrix4.identity()
+                                ..scale(-1.0, 1.0), // Mirror horizontally
+                              child: Image.asset(
+                                currentCountryContent[index]['characterImage']!,
+                                height: selectedImageHeight,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                         ),
-                      ),*/
-                    ],
-                  );
-                },
-              ),
+                      ],
+                    );*/
+                      Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            // Cloud with Text Overlay
+                            Align(
+                              alignment: Alignment(
+                                characterAlignment.x + 0.2,
+                                characterAlignment.y,
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Stack(
+                                  alignment: Alignment.center,
+                                  children: [
+                                    // Cloud Image with dynamic size
+                                    SizedBox(
+                                      width: cloudWidth,
+                                      height: cloudHeight,
+                                      child: Image.asset(
+                                        currentCountryContent[index]['cloudImage']!,
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                    // Overlay Text on Cloud Image
+                                    Padding(
+                                      padding: const EdgeInsets.only(bottom: 20, right: 8),
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                                        width: cloudWidth,
+                                        child: Text(
+                                          wrappedText,
+                                          style: const TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w400,
+                                            color: Colors.black,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          maxLines: 6,
+                                          overflow: TextOverflow.visible,
+                                          softWrap: true,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
 
-              // Next Button
-              currentCountryContent.length - 1 == _currentPage
-                  ? SizedBox()
-                  : Positioned(
-                      right: 20,
-                      top: MediaQuery.of(context).size.height / 2,
-                      child: Bounce(
-                        // filterQuality:FilterQuality.high,
-                        onTap: () {
-                          print(_currentPage);
-                          print(currentCountryContent.length);
-                          if (_currentPage < currentCountryContent.length - 1) {
-                            _pageController.nextPage(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeIn,
-                            );
-                          }
-                        },
-                        child: Image.asset(
-                          'assets/images/next_btn.png',
-                          width: 100,
-                          height: 100,
-                        ),
-                      ),
-                    ),
+                            // Character Image
+                            Align(
+                              alignment: characterAlignment,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Transform(
+                                  alignment: Alignment.center,
+                                  transform: Matrix4.identity()..scale(-1.0, 1.0), // Mirror horizontally
+                                  child: Image.asset(
+                                    currentCountryContent[index]['characterImage']!,
+                                    height: selectedImageHeight,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      );
+                  },
+                ),
 
-              // Previous Button
-              if (_currentPage > 0)
-                Positioned(
-                  left: 20,
+                // Next Button
+                currentCountryContent.length - 1 == _currentPage
+                    ? SizedBox()
+                    : Positioned(
+                  right: 20,
                   top: MediaQuery.of(context).size.height / 2,
                   child: Bounce(
+                    // filterQuality:FilterQuality.high,
                     onTap: () {
                       print(_currentPage);
                       print(currentCountryContent.length);
-                      if (_currentPage > 0) {
-                        _pageController.previousPage(
+                      if (_currentPage < currentCountryContent.length - 1) {
+                        _pageController.nextPage(
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeIn,
                         );
                       }
                     },
                     child: Image.asset(
-                      'assets/images/previous_btn.png',
+                      'assets/images/next_btn.png',
                       width: 100,
                       height: 100,
                     ),
                   ),
                 ),
 
-              // Back Button to Home Page
-              Align(
-                alignment: const AlignmentDirectional(-0.99, -0.9),
-                child: Bounce(
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(
-                      SlideFromLeftPageRoute(
-                        page: const HomePage(),
+                // Previous Button
+                if (_currentPage > 0)
+                  Positioned(
+                    left: 20,
+                    top: MediaQuery.of(context).size.height / 2,
+                    child: Bounce(
+                      onTap: () {
+                        print(_currentPage);
+                        print(currentCountryContent.length);
+                        if (_currentPage > 0) {
+                          _pageController.previousPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeIn,
+                          );
+                        }
+                      },
+                      child: Image.asset(
+                        'assets/images/previous_btn.png',
+                        width: 100,
+                        height: 100,
                       ),
-                    );
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(0),
-                    child: Image.asset(
-                      'assets/images/bonus_btn.png',
-                      width: MediaQuery.sizeOf(context).width * 0.1,
-                      height: MediaQuery.sizeOf(context).height * 0.1,
-                      fit: BoxFit.contain,
+                    ),
+                  ),
+
+                // Back Button to Home Page
+                Align(
+                  alignment: const AlignmentDirectional(-0.99, -0.9),
+                  child: Bounce(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(
+                        SlideFromLeftPageRoute(
+                          page: const HomePage(),
+                        ),
+                      );
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(0),
+                      child: Image.asset(
+                        'assets/images/bonus_btn.png',
+                        width: MediaQuery.sizeOf(context).width * 0.1,
+                        height: MediaQuery.sizeOf(context).height * 0.1,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
+    }
 }
 
 // Custom route for the animation
@@ -306,24 +362,24 @@ class SlideFromLeftPageRoute<T> extends PageRouteBuilder<T> {
 
   SlideFromLeftPageRoute({required this.page})
       : super(
-          pageBuilder: (context, animation, secondaryAnimation) => page,
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            // Start from the left of the screen
-            const begin = Offset(-1.0, 0.0);
-            const end = Offset.zero;
-            const curve = Curves.easeInOut;
+    pageBuilder: (context, animation, secondaryAnimation) => page,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      // Start from the left of the screen
+      const begin = Offset(-1.0, 0.0);
+      const end = Offset.zero;
+      const curve = Curves.easeInOut;
 
-            // Apply the animation
-            var tween =
-                Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-            var offsetAnimation = animation.drive(tween);
+      // Apply the animation
+      var tween =
+      Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+      var offsetAnimation = animation.drive(tween);
 
-            return SlideTransition(
-              position: offsetAnimation,
-              child: _buildWhiteBox(child),
-            );
-          },
-        );
+      return SlideTransition(
+        position: offsetAnimation,
+        child: _buildWhiteBox(child),
+      );
+    },
+  );
 
   // Build the white box with rounded corners on the right side
   static Widget _buildWhiteBox(Widget child) {
