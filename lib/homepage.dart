@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'country_wise_stories.dart';
 
@@ -17,7 +19,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print('Home Page');
+    log('Home Page ${MediaQuery.of(context).size.height}');
+    log('Home Page ${MediaQuery.of(context).size.width}');
 
     return Scaffold(
       body: Stack(
@@ -64,19 +67,22 @@ class _HomePageState extends State<HomePage> {
                 double imageHeightFactor;
 
                 // Handle specific resolutions or aspect ratios
-                if (constraints.maxWidth <= 2560 && constraints.maxHeight <= 1600) {
+                if (constraints.maxWidth <= 2560 &&
+                    constraints.maxHeight <= 1600) {
                   // For 2560x1600 resolution
                   alignmentX = 0.3;
-                  alignmentY = -0.2;
+                  alignmentY = 0.2;
                   imageWidthFactor = 0.3;
                   imageHeightFactor = 0.5;
-                } else if (constraints.maxWidth <= 1600 && constraints.maxHeight <= 2560) {
+                } else if (constraints.maxWidth <= 1600 &&
+                    constraints.maxHeight <= 2560) {
                   // For 1600x2560 resolution
                   alignmentX = 0.2;
                   alignmentY = -0.6;
                   imageWidthFactor = 0.4;
                   imageHeightFactor = 0.6;
-                } else if (constraints.maxWidth >= 1000 && constraints.maxWidth <= 1500) {
+                } else if (constraints.maxWidth >= 1000 &&
+                    constraints.maxWidth <= 1500) {
                   // For iPads or similar-sized devices
                   alignmentX = 0.4;
                   alignmentY = -0.4;
@@ -124,19 +130,22 @@ class _HomePageState extends State<HomePage> {
               double imageHeight;
 
               // Handle specific screen resolutions
-              if (constraints.maxWidth == 2560 && constraints.maxHeight == 1600) {
+              if (constraints.maxWidth == 2560 &&
+                  constraints.maxHeight == 1600) {
                 // For 2560x1600 resolution
                 alignmentX = 0.8; // Adjust based on design
                 alignmentY = 0.9; // Adjust based on design
                 imageWidth = 600;
                 imageHeight = 400;
-              } else if (constraints.maxWidth == 1600 && constraints.maxHeight == 2560) {
+              } else if (constraints.maxWidth == 1600 &&
+                  constraints.maxHeight == 2560) {
                 // For 1600x2560 resolution
                 alignmentX = 0.7;
                 alignmentY = 0.9;
                 imageWidth = 600;
                 imageHeight = 400;
-              } else if (constraints.maxWidth > 1000 && constraints.maxWidth < 1500) {
+              } else if (constraints.maxWidth > 1000 &&
+                  constraints.maxWidth < 1500) {
                 // For iPads or similar-sized devices
                 alignmentX = 0.9;
                 alignmentY = 0.9;
@@ -176,9 +185,11 @@ class _HomePageState extends State<HomePage> {
           ),*/
           // Animated White Box with rounded right corners
           AnimatedPositioned(
-            duration: const Duration(milliseconds: 500), // Duration of animation
+            duration:
+                const Duration(milliseconds: 500), // Duration of animation
             left: _animateBoxLeft
-                ? -MediaQuery.of(context).size.width * 0.38 // Move left when transitioning
+                ? -MediaQuery.of(context).size.width *
+                    0.38 // Move left when transitioning
                 : 0, // Default position
             top: 0,
             bottom: 0,
@@ -337,7 +348,8 @@ class _HomePageState extends State<HomePage> {
               child: GestureDetector(
                 onTap: () {
                   setState(() {
-                    _animateBoxLeft = true; // Start the animation when navigating
+                    _animateBoxLeft =
+                        true; // Start the animation when navigating
                   });
                   Future.delayed(const Duration(milliseconds: 500), () {
                     Navigator.push(
@@ -361,7 +373,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ).then((_) {
                       setState(() {
-                        _animateBoxLeft = false; // Reset animation when coming back
+                        _animateBoxLeft =
+                            false; // Reset animation when coming back
                       });
                     });
                   });
@@ -387,14 +400,16 @@ class _HomePageState extends State<HomePage> {
       String boyImage, String topImage) {
     setState(() {
       selectedCountry = country;
-      selectedBackgroundImage = backgroundImage; // Update the background image based on selection
+      selectedBackgroundImage =
+          backgroundImage; // Update the background image based on selection
       selectedBoyImage = boyImage; // Update the boy image based on selection
       selectedTopImage = topImage; // Update the top image based on selection
     });
   }
 
   // List Item with country name and image
-  Widget countryListItem(String countryName, String assetPath, VoidCallback? onTap) {
+  Widget countryListItem(
+      String countryName, String assetPath, VoidCallback? onTap) {
     final bool isSelected = selectedCountry == countryName;
 
     return GestureDetector(
