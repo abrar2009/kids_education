@@ -93,7 +93,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
       List<Map<String, String>> currentCountryContent = countryContent[widget.countryName] ?? [];
 
       double selectedImageHeight =
-      widget.countryName.toLowerCase() == '' ? 280 : 400;
+      widget.countryName.toLowerCase() == '' ? 280 : 420;
 
       String wrappedText = wrapText(currentCountryContent[_currentPage]['cloudText']!);
 
@@ -106,8 +106,8 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
 
       // Adjust the cloud size based on text size and number of lines
       int numOfLines = wrappedText.split('\n').length;
-      double cloudWidth = cloudTextSize.width + 200;
-      double cloudHeight = cloudTextSize.height + (numOfLines * 30) + 100;
+      double cloudWidth = cloudTextSize.width + 260;
+      //double cloudHeight = cloudTextSize.height + (numOfLines * 30) + 100;
 
       return GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
@@ -205,73 +205,100 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                         ),
                       ],
                     );*/
-                      Container(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            // Cloud with Text Overlay
-                            Align(
-                              alignment: Alignment(
-                                characterAlignment.x + 0.2,
-                                characterAlignment.y,
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Stack(
-                                  alignment: Alignment.center,
-                                  children: [
-                                    // Cloud Image with dynamic size
-                                    SizedBox(
-                                      width: cloudWidth,
-                                      height: cloudHeight,
-                                      child: Image.asset(
-                                        currentCountryContent[index]['cloudImage']!,
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ),
-                                    // Overlay Text on Cloud Image
-                                    Padding(
-                                      padding: const EdgeInsets.only(bottom: 20, right: 8),
-                                      child: Container(
-                                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                                        width: cloudWidth,
-                                        child: Text(
-                                          wrappedText,
-                                          style: const TextStyle(
-                                            fontSize: 24,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 6,
-                                          overflow: TextOverflow.visible,
-                                          softWrap: true,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          // Cloud with Text Overlay
+                          Align(
+                            /*alignment: Alignment(
+                              characterAlignment.x <= 0
+                                ? characterAlignment.x + 0
+                                : characterAlignment.x >= 0
+                                  ? characterAlignment.x - 0.3
+                                  : characterAlignment.x,
+                              characterAlignment.y,
+                            ),*/
+                            alignment: Alignment(
+                              characterAlignment.x == 0
+                                  ? characterAlignment.x + 0.3
+                                  : (characterAlignment.x > 0
+                                  ? characterAlignment.x - 0.3
+                                  : (characterAlignment.x >= -0.1
+                                  ? characterAlignment.x + 0.3
+                                  : characterAlignment.x)),
+                              characterAlignment.y == 0
+                                  ? characterAlignment.y + 0.3
+                                  : (characterAlignment.y > 0
+                                  ? characterAlignment.y - 0.3
+                                  : characterAlignment.y), // Updated condition for alignmentY
                             ),
-
-                            // Character Image
-                            Align(
-                              alignment: characterAlignment,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Transform(
-                                  alignment: Alignment.center,
-                                  transform: Matrix4.identity()..scale(-1.0, 1.0), // Mirror horizontally
-                                  child: Image.asset(
-                                    currentCountryContent[index]['characterImage']!,
-                                    height: selectedImageHeight,
-                                    fit: BoxFit.cover,
+                            /*alignment: Alignment(
+                              characterAlignment.x < 0
+                                  ? characterAlignment.x
+                                  : (characterAlignment.x > 0
+                                  ? characterAlignment.x + 0.3
+                                  : (characterAlignment.x >= -0.1 || characterAlignment.x <= -0.3
+                                  ? characterAlignment.x + 0.3
+                                  : characterAlignment.x)),
+                              characterAlignment.y, // Keep y unchanged
+                            ),*/
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  // Cloud Image with dynamic size
+                                  SizedBox(
+                                    width: cloudWidth,
+                                    //height: 230,
+                                    child: Image.asset(
+                                      currentCountryContent[index]['cloudImage']!,
+                                      fit: BoxFit.contain,
+                                    ),
                                   ),
+                                  // Overlay Text on Cloud Image
+                                  Padding(
+                                    padding: const EdgeInsets.only(bottom: 30, right: 20),
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                                      width: cloudWidth,
+                                      child: Text(
+                                        wrappedText,
+                                        style: const TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        maxLines: 6,
+                                        overflow: TextOverflow.visible,
+                                        softWrap: true,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          // Character Image
+                          Align(
+                            alignment: characterAlignment,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Transform(
+                                alignment: Alignment.center,
+                                transform: Matrix4.identity()..scale(-1.0, 1.0), // Mirror horizontally
+                                child: Image.asset(
+                                  currentCountryContent[index]['characterImage']!,
+                                  height: selectedImageHeight,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-                          ],
-                        )
+                          ),
+                        ],
                       );
                   },
                 ),
@@ -318,6 +345,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                           );
                         }
                       },
+
                       child: Image.asset(
                         'assets/images/previous_btn.png',
                         width: 100,

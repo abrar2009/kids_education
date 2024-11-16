@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'country_wise_stories.dart';
 
@@ -17,7 +19,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print('Home Page');
+    log('Home Page ${MediaQuery.of(context).size.height}');
 
     return Scaffold(
       body: Stack(
@@ -39,24 +41,6 @@ class _HomePageState extends State<HomePage> {
           // Dynamic Top Image that appears when a country is selected
           if (selectedTopImage != null) ...[
             /*LayoutBuilder(
-              builder: (context, constraints) {
-                return Align(
-                  alignment: Alignment(
-                    constraints.maxWidth * 0.0003, // Adjust alignment dynamically
-                    constraints.maxHeight * -0.0001,
-                  ),
-                  child: SizedBox(
-                    width: constraints.maxWidth * 0.3, // Adjust size dynamically
-                    child: Image.asset(
-                      selectedTopImage!,
-                      height: constraints.maxHeight * 0.5,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                );
-              },
-            ),*/
-            LayoutBuilder(
               builder: (context, constraints) {
                 double alignmentX;
                 double alignmentY;
@@ -102,7 +86,56 @@ class _HomePageState extends State<HomePage> {
                   ),
                 );
               },
+            ),*/
+            LayoutBuilder(
+              builder: (context, constraints) {
+                double alignmentX;
+                double alignmentY;
+                double imageWidthFactor;
+                double imageHeightFactor;
+
+                // Determine alignmentY based on height
+                if (constraints.maxHeight >= 1200) {
+                  alignmentY = 0.5;
+                } else if (constraints.maxHeight >= 750) {
+                  alignmentY = -0.3;
+                } else {
+                  alignmentY = 0; // Default case
+                }
+
+                // Determine alignmentX and size factors based on width
+                if (constraints.maxWidth <= 2560) {
+                  alignmentX = 0.3;
+                  imageWidthFactor = 0.3;
+                  imageHeightFactor = 0.5;
+                } else if (constraints.maxWidth <= 1600) {
+                  alignmentX = 0.2;
+                  imageWidthFactor = 0.4;
+                  imageHeightFactor = 0.6;
+                } else if (constraints.maxWidth >= 1000 && constraints.maxWidth <= 1500) {
+                  alignmentX = 0.4;
+                  imageWidthFactor = 0.35;
+                  imageHeightFactor = 0.45;
+                } else {
+                  alignmentX = 0.0; // Default case for other resolutions
+                  imageWidthFactor = 0.3;
+                  imageHeightFactor = 0.5;
+                }
+
+                return Align(
+                  alignment: Alignment(alignmentX, alignmentY),
+                  child: SizedBox(
+                    width: constraints.maxWidth * imageWidthFactor,
+                    child: Image.asset(
+                      selectedTopImage!,
+                      height: constraints.maxHeight * imageHeightFactor,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                );
+              },
             ),
+
             /*Align(
               alignment: const Alignment(0.4, -0.4), // Adjust alignment as needed
               child: SizedBox(

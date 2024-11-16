@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/services.dart';
 import 'homepage.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Lock orientation to landscape
+  /*SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]).then((_) {
+    runApp(const MyApp());
+  });*/
   runApp(const MyApp());
 }
 

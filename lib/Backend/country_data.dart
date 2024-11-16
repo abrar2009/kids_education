@@ -46,7 +46,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the animals of INDIA.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '0.1,0.9',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.3,-0.1',
     },
     {
@@ -70,7 +70,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the food of INDIA.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '0.1,0.9',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.4,-0.1',
     },
     {
@@ -110,7 +110,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the festivals of INDIA.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '0.1,0.9',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.4,-0.1',
     },
     {
@@ -145,7 +145,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the culture of USA.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,0.9',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
     {
@@ -178,7 +178,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the animals of USA.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,0.9',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
     {
@@ -202,7 +202,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the food of USA.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,0.9',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
     {
@@ -226,7 +226,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the sport of USA.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,0.9',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.2',
     },
     {
@@ -251,7 +251,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the festivals of USA.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,0.9',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
   ],
@@ -261,7 +261,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Russia is the biggest country in the world',
       'characterImage': 'assets/images/russiaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,1',
+      //'characterAlignment': '-0.1,1',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
     {
@@ -269,7 +270,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the culture of RUSSIA.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,1',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
     {
@@ -301,7 +302,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the animals of RUSSIA.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,1',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
     {
@@ -325,7 +326,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the food of RUSSIA.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,1',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
     {
@@ -349,7 +350,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the sport of RUSSIA.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,1',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
     {
@@ -373,7 +374,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'Lets see the festivals of RUSSIA',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,1',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
     {
