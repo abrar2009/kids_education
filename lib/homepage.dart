@@ -95,11 +95,13 @@ class _HomePageState extends State<HomePage> {
                 double imageHeightFactor;
 
                 // Determine alignmentY based on height
-                if (constraints.maxHeight >= 1200) {
+                if (constraints.maxHeight >= 1000) {
                   alignmentY = 0.5;
                 } else if (constraints.maxHeight >= 750) {
+                  alignmentY = -0.5;
+                } /*else if (constraints.maxHeight >= 750) {
                   alignmentY = -0.3;
-                } else {
+                }*/ else {
                   alignmentY = 0; // Default case
                 }
 

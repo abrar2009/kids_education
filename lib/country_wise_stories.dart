@@ -113,112 +113,104 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
         onTap: () => FocusScope.of(context).unfocus(),
         child: Scaffold(
           key: scaffoldKey,
-          body: SafeArea(
-            top: true,
-            child: Stack(
-              children: [
-                // Dynamic Background Image
-                Image.asset(
-                  currentCountryContent[_currentPage]['backgroundImage']!,
-                  width: MediaQuery.sizeOf(context).width * 1,
-                  height: MediaQuery.sizeOf(context).height * 0.968,
-                  fit: BoxFit.cover,
-                ),
-                // PageView for dynamic content
-                PageView.builder(
-                  controller: _pageController,
-                  onPageChanged: (page) {
-                    setState(() {
-                      _currentPage = page;
-                    });
-                  },
-                  itemCount: currentCountryContent.length,
-                  itemBuilder: (context, index) {
-                    String characterAlignmentString = currentCountryContent[_currentPage]['characterAlignment']!;
-                    Alignment characterAlignment = _parseAlignment(characterAlignmentString);
-                    return /*Stack(
-                      children: [
-                        // Cloud Text
-                        Align(
-                          //alignment: AlignmentDirectional(-0.11, -0.3),
-                          alignment: _parseAlignment(
-                              currentCountryContent[index]['cloudAlignment']!),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                // Cloud Image with dynamic size
-                                SizedBox(
-                                  width: cloudWidth,
-                                  height: cloudHeight,
-                                  child: Image.asset(
-                                    //'assets/images/Cloud.png',
-                                    currentCountryContent[index]['cloudImage']!,
-                                    fit: BoxFit.contain,
-                                  ),
+          body: Stack(
+            children: [
+              // Dynamic Background Image
+              Image.asset(
+                currentCountryContent[_currentPage]['backgroundImage']!,
+                width: MediaQuery.sizeOf(context).width * 1,
+                height: MediaQuery.sizeOf(context).height * 1,
+                fit: BoxFit.cover,
+              ),
+              // PageView for dynamic content
+              PageView.builder(
+                controller: _pageController,
+                onPageChanged: (page) {
+                  setState(() {
+                    _currentPage = page;
+                  });
+                },
+                itemCount: currentCountryContent.length,
+                itemBuilder: (context, index) {
+                  String characterAlignmentString = currentCountryContent[_currentPage]['characterAlignment']!;
+                  Alignment characterAlignment = _parseAlignment(characterAlignmentString);
+                  return /*Stack(
+                    children: [
+                      // Cloud Text
+                      Align(
+                        //alignment: AlignmentDirectional(-0.11, -0.3),
+                        alignment: _parseAlignment(
+                            currentCountryContent[index]['cloudAlignment']!),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              // Cloud Image with dynamic size
+                              SizedBox(
+                                width: cloudWidth,
+                                height: cloudHeight,
+                                child: Image.asset(
+                                  //'assets/images/Cloud.png',
+                                  currentCountryContent[index]['cloudImage']!,
+                                  fit: BoxFit.contain,
                                 ),
-                                // Overlay Text on Cloud Image
-                                Padding(
-                                  padding:
-                                  const EdgeInsets.only(bottom: 20, right: 8),
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 16, vertical: 10),
-                                    width: cloudWidth,
-                                    child: Text(
-                                      //currentCountryContent[index]['cloudText']!,
-                                      wrappedText,
-                                      style: const TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.w400,
-                                        color: Colors.black,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      maxLines: 6,
-                                      overflow: TextOverflow.visible,
-                                      softWrap: true,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        Align(
-                          alignment: _parseAlignment(currentCountryContent[index]
-                          ['characterAlignment']!),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Transform(
-                              alignment: Alignment.center,
-                              transform: Matrix4.identity()
-                                ..scale(-1.0, 1.0), // Mirror horizontally
-                              child: Image.asset(
-                                currentCountryContent[index]['characterImage']!,
-                                height: selectedImageHeight,
-                                fit: BoxFit.cover,
                               ),
+                              // Overlay Text on Cloud Image
+                              Padding(
+                                padding:
+                                const EdgeInsets.only(bottom: 20, right: 8),
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16, vertical: 10),
+                                  width: cloudWidth,
+                                  child: Text(
+                                    //currentCountryContent[index]['cloudText']!,
+                                    wrappedText,
+                                    style: const TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    maxLines: 6,
+                                    overflow: TextOverflow.visible,
+                                    softWrap: true,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      Align(
+                        alignment: _parseAlignment(currentCountryContent[index]
+                        ['characterAlignment']!),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Transform(
+                            alignment: Alignment.center,
+                            transform: Matrix4.identity()
+                              ..scale(-1.0, 1.0), // Mirror horizontally
+                            child: Image.asset(
+                              currentCountryContent[index]['characterImage']!,
+                              height: selectedImageHeight,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                      ],
-                    );*/
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
+                      ),
+                    ],
+                  );*/
+                    Stack(
+                      children: [
+                        Column(
+                        //mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           // Cloud with Text Overlay
                           Align(
-                            /*alignment: Alignment(
-                              characterAlignment.x <= 0
-                                ? characterAlignment.x + 0
-                                : characterAlignment.x >= 0
-                                  ? characterAlignment.x - 0.3
-                                  : characterAlignment.x,
-                              characterAlignment.y,
-                            ),*/
                             alignment: Alignment(
                               characterAlignment.x == 0
                                   ? characterAlignment.x + 0.3
@@ -231,18 +223,8 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                                   ? characterAlignment.y + 0.3
                                   : (characterAlignment.y > 0
                                   ? characterAlignment.y - 0.3
-                                  : characterAlignment.y), // Updated condition for alignmentY
+                                  : characterAlignment.y),
                             ),
-                            /*alignment: Alignment(
-                              characterAlignment.x < 0
-                                  ? characterAlignment.x
-                                  : (characterAlignment.x > 0
-                                  ? characterAlignment.x + 0.3
-                                  : (characterAlignment.x >= -0.1 || characterAlignment.x <= -0.3
-                                  ? characterAlignment.x + 0.3
-                                  : characterAlignment.x)),
-                              characterAlignment.y, // Keep y unchanged
-                            ),*/
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: Stack(
@@ -299,85 +281,102 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                             ),
                           ),
                         ],
-                      );
-                  },
-                ),
+                      ),
+                        if(characterAlignment.x <= -0.7)
+                        Align(
+                          alignment: Alignment(characterAlignment.x + 1.4, characterAlignment.y + 0.1),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Transform(
+                              alignment: Alignment.center,
+                              transform: Matrix4.identity()..scale(-1.0, 1.0), // Mirror horizontally
+                              child: Image.asset(
+                                'assets/images/boardImage.png',
+                                height: selectedImageHeight + 50,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ]
+                    );
+                },
+              ),
 
-                // Next Button
-                currentCountryContent.length - 1 == _currentPage
-                    ? SizedBox()
-                    : Positioned(
-                  right: 20,
+              // Next Button
+              currentCountryContent.length - 1 == _currentPage
+                  ? SizedBox()
+                  : Positioned(
+                right: 20,
+                top: MediaQuery.of(context).size.height / 2,
+                child: Bounce(
+                  // filterQuality:FilterQuality.high,
+                  onTap: () {
+                    print(_currentPage);
+                    print(currentCountryContent.length);
+                    if (_currentPage < currentCountryContent.length - 1) {
+                      _pageController.nextPage(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeIn,
+                      );
+                    }
+                  },
+                  child: Image.asset(
+                    'assets/images/next_btn.png',
+                    width: 100,
+                    height: 100,
+                  ),
+                ),
+              ),
+
+              // Previous Button
+              if (_currentPage > 0)
+                Positioned(
+                  left: 20,
                   top: MediaQuery.of(context).size.height / 2,
                   child: Bounce(
-                    // filterQuality:FilterQuality.high,
                     onTap: () {
                       print(_currentPage);
                       print(currentCountryContent.length);
-                      if (_currentPage < currentCountryContent.length - 1) {
-                        _pageController.nextPage(
+                      if (_currentPage > 0) {
+                        _pageController.previousPage(
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeIn,
                         );
                       }
                     },
+
                     child: Image.asset(
-                      'assets/images/next_btn.png',
+                      'assets/images/previous_btn.png',
                       width: 100,
                       height: 100,
                     ),
                   ),
                 ),
 
-                // Previous Button
-                if (_currentPage > 0)
-                  Positioned(
-                    left: 20,
-                    top: MediaQuery.of(context).size.height / 2,
-                    child: Bounce(
-                      onTap: () {
-                        print(_currentPage);
-                        print(currentCountryContent.length);
-                        if (_currentPage > 0) {
-                          _pageController.previousPage(
-                            duration: const Duration(milliseconds: 300),
-                            curve: Curves.easeIn,
-                          );
-                        }
-                      },
-
-                      child: Image.asset(
-                        'assets/images/previous_btn.png',
-                        width: 100,
-                        height: 100,
+              // Back Button to Home Page
+              Align(
+                alignment: const AlignmentDirectional(-0.99, -0.9),
+                child: Bounce(
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(
+                      SlideFromLeftPageRoute(
+                        page: const HomePage(),
                       ),
-                    ),
-                  ),
-
-                // Back Button to Home Page
-                Align(
-                  alignment: const AlignmentDirectional(-0.99, -0.9),
-                  child: Bounce(
-                    onTap: () {
-                      Navigator.of(context).pushReplacement(
-                        SlideFromLeftPageRoute(
-                          page: const HomePage(),
-                        ),
-                      );
-                    },
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(0),
-                      child: Image.asset(
-                        'assets/images/bonus_btn.png',
-                        width: MediaQuery.sizeOf(context).width * 0.1,
-                        height: MediaQuery.sizeOf(context).height * 0.1,
-                        fit: BoxFit.contain,
-                      ),
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(0),
+                    child: Image.asset(
+                      'assets/images/bonus_btn.png',
+                      width: MediaQuery.sizeOf(context).width * 0.1,
+                      height: MediaQuery.sizeOf(context).height * 0.1,
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       );
