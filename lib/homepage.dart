@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'country_wise_stories.dart';
 
@@ -16,12 +15,102 @@ class _HomePageState extends State<HomePage> {
   String selectedBoyImage = 'assets/images/boy.png';
   String? selectedTopImage;
   bool _animateBoxLeft = false; // Flag to track animation
+  TextEditingController _searchController = TextEditingController();
+  List<Map<String, String>> countryList = [
+    {
+      'name': 'India',
+      'image': 'assets/images/india.png',
+      'bgImage': 'assets/images/indiaBG.png',
+      'boyImage': 'assets/images/ladyInSaree.gif',
+      'topImage': 'assets/images/indiaCloud.png',
+    },
+    {
+      'name': 'USA',
+      'image': 'assets/images/usa.png',
+      'bgImage': 'assets/images/usaBG.png',
+      'boyImage': 'assets/images/usaGirl.png',
+      'topImage': 'assets/images/usaCloud.png',
+    },
+    {
+      'name': 'Russia',
+      'image': 'assets/images/russia.png',
+      'bgImage': 'assets/images/russiaBG.png',
+      'boyImage': 'assets/images/russiaGirl.gif',
+      'topImage': 'assets/images/russiaCloud.png',
+    },
+    {
+      'name': 'Japan',
+      'image': 'assets/images/japan.png',
+      'bgImage': 'assets/images/japanBG.png',
+      'boyImage': 'assets/images/japanGirl.gif',
+      'topImage': 'assets/images/japanTopImage.png',
+    },
+    {
+      'name': 'United Kingdom',
+      'image': 'assets/images/uk.png',
+      'bgImage': 'assets/images/ukBG.png',
+      'boyImage': 'assets/images/ukBoy.gif',
+      'topImage': 'assets/images/ukTopImage.png',
+    },
+    {
+      'name': 'Italy',
+      'image': 'assets/images/italy.png',
+      'bgImage': 'assets/images/italyBG.png',
+      'boyImage': 'assets/images/italyBoy.gif',
+      'topImage': 'assets/images/italyTopImage.png',
+    },
+    {
+      'name': 'Kenya',
+      'image': 'assets/images/kenya.png',
+      'bgImage': 'assets/images/kenyaBG.png',
+      'boyImage': 'assets/images/kenyaBoy.gif',
+      'topImage': 'assets/images/kenyaTopImage.png',
+    },
+    {
+      'name': 'Brazil',
+      'image': 'assets/images/brazil.png',
+      'bgImage': 'assets/images/brazilBG.png',
+      'boyImage': 'assets/images/brazilBoy.gif',
+      'topImage': 'assets/images/brazilTopImage.png',
+    },
+    {
+      'name': 'China',
+      'image': 'assets/images/china.png',
+      'bgImage': 'assets/images/chinaBG.png',
+      'boyImage': 'assets/images/chinaGirl.gif',
+      'topImage': 'assets/images/chinaTopImage.png',
+    },
+  ];
+
+  List<Map<String, String>> filteredCountries = [];
+  @override
+  void initState() {
+    super.initState();
+    filteredCountries = List.from(countryList);
+    _searchController.addListener(_filterCountries);
+  }
+
+  void _filterCountries() {
+    String searchQuery = _searchController.text.toLowerCase();
+    setState(() {
+      filteredCountries = countryList
+          .where((country) => country['name']!.toLowerCase().contains(searchQuery))
+          .toList();
+    });
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     log('Home Page ${MediaQuery.of(context).size.height}');
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           // Background image that changes according to selected country
@@ -38,55 +127,8 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          // Dynamic Top Image that appears when a country is selected
+          // Dynamic Topcloud Image that appears when a country is selected
           if (selectedTopImage != null) ...[
-            /*LayoutBuilder(
-              builder: (context, constraints) {
-                double alignmentX;
-                double alignmentY;
-                double imageWidthFactor;
-                double imageHeightFactor;
-
-                // Handle specific resolutions or aspect ratios
-                if (constraints.maxWidth <= 2560 && constraints.maxHeight <= 1600) {
-                  // For 2560x1600 resolution
-                  alignmentX = 0.3;
-                  alignmentY = -0.2;
-                  imageWidthFactor = 0.3;
-                  imageHeightFactor = 0.5;
-                } else if (constraints.maxWidth <= 1600 && constraints.maxHeight <= 2560) {
-                  // For 1600x2560 resolution
-                  alignmentX = 0.2;
-                  alignmentY = -0.6;
-                  imageWidthFactor = 0.4;
-                  imageHeightFactor = 0.6;
-                } else if (constraints.maxWidth >= 1000 && constraints.maxWidth <= 1500) {
-                  // For iPads or similar-sized devices
-                  alignmentX = 0.4;
-                  alignmentY = -0.4;
-                  imageWidthFactor = 0.35;
-                  imageHeightFactor = 0.45;
-                } else {
-                  // Default case for other resolutions
-                  alignmentX = 0.0;
-                  alignmentY = 0.0;
-                  imageWidthFactor = 0.3;
-                  imageHeightFactor = 0.5;
-                }
-
-                return Align(
-                  alignment: Alignment(alignmentX, alignmentY),
-                  child: SizedBox(
-                    width: constraints.maxWidth * imageWidthFactor,
-                    child: Image.asset(
-                      selectedTopImage!,
-                      height: constraints.maxHeight * imageHeightFactor,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                );
-              },
-            ),*/
             LayoutBuilder(
               builder: (context, constraints) {
                 double alignmentX;
@@ -137,18 +179,6 @@ class _HomePageState extends State<HomePage> {
                 );
               },
             ),
-
-            /*Align(
-              alignment: const Alignment(0.4, -0.4), // Adjust alignment as needed
-              child: SizedBox(
-                width: 300, // Adjust width as needed
-                child: Image.asset(
-                  selectedTopImage!,
-                  height: 400, // Adjust height as needed
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),*/
           ],
           // Dynamic Boy Image
           LayoutBuilder(
@@ -198,18 +228,7 @@ class _HomePageState extends State<HomePage> {
               );
             },
           ),
-          /*Align(
-            alignment: const Alignment(0.9, 0.9),
-            child: SizedBox(
-              width: 600,
-              child: Image.asset(
-                selectedBoyImage,
-                height: 400,
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),*/
-          // Animated White Box with rounded right corners
+          // Animated white box(side drawer) with rounded right corners
           AnimatedPositioned(
             duration: const Duration(milliseconds: 500), // Duration of animation
             left: _animateBoxLeft
@@ -257,6 +276,7 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                       child: TextField(
+                        controller: _searchController,
                         decoration: InputDecoration(
                           hintText: 'Search Country',
                           prefixIcon: const Icon(Icons.search),
@@ -275,89 +295,18 @@ class _HomePageState extends State<HomePage> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 50, right: 50),
                       child: ListView(
-                        children: [
-                          countryListItem(
-                            'India',
-                            'assets/images/india.png',
-                            () => onCountrySelected(
-                                'India',
-                                'assets/images/indiaBG.png',
-                                'assets/images/ladyInSaree.gif',
-                                'assets/images/indiaCloud.png'),
-                          ),
-                          countryListItem(
-                            'USA',
-                            'assets/images/usa.png',
-                            () => onCountrySelected(
-                                'USA',
-                                'assets/images/usaBG.png',
-                                'assets/images/usaGirl.png',
-                                'assets/images/usaCloud.png'),
-                          ),
-                          countryListItem(
-                            'Russia',
-                            'assets/images/russia.png',
-                            () => onCountrySelected(
-                                'Russia',
-                                'assets/images/russiaBG.png',
-                                'assets/images/russiaGirl.gif',
-                                'assets/images/russiaCloud.png'),
-                          ),
-                          countryListItem(
-                            'Japan',
-                            'assets/images/japan.png',
-                            () => onCountrySelected(
-                                'Japan',
-                                'assets/images/japanBG.png',
-                                'assets/images/japanGirl.gif',
-                                'assets/images/japanTopImage.png'),
-                          ),
-                          countryListItem(
-                            'United Kingdom',
-                            'assets/images/uk.png',
-                            () => onCountrySelected(
-                                'United Kingdom',
-                                'assets/images/ukBG.png',
-                                'assets/images/ukBoy.gif',
-                                'assets/images/ukTopImage.png'),
-                          ),
-                          countryListItem(
-                            'Italy',
-                            'assets/images/italy.png',
-                            () => onCountrySelected(
-                                'Italy',
-                                'assets/images/italyBG.png',
-                                'assets/images/italyBoy.gif',
-                                'assets/images/italyTopImage.png'),
-                          ),
-                          countryListItem(
-                            'Kenya',
-                            'assets/images/kenya.png',
-                            () => onCountrySelected(
-                                'Kenya',
-                                'assets/images/kenyaBG.png',
-                                'assets/images/kenyaBoy.gif',
-                                'assets/images/kenyaTopImage.png'),
-                          ),
-                          countryListItem(
-                            'Brazil',
-                            'assets/images/brazil.png',
-                            () => onCountrySelected(
-                                'Brazil',
-                                'assets/images/brazilBG.png',
-                                'assets/images/brazilBoy.gif',
-                                'assets/images/brazilTopImage.png'),
-                          ),
-                          countryListItem(
-                            'China',
-                            'assets/images/china.png',
-                            () => onCountrySelected(
-                                'China',
-                                'assets/images/chinaBG.png',
-                                'assets/images/chinaGirl.gif',
-                                'assets/images/chinaTopImage.png'),
-                          ),
-                        ],
+                        children: filteredCountries.map((country) {
+                          return countryListItem(
+                            country['name']!,
+                            country['image']!,
+                                () => onCountrySelected(
+                              country['name']!,
+                              country['bgImage']!,
+                              country['boyImage']!,
+                              country['topImage']!,
+                            ),
+                          );
+                        }).toList(),
                       ),
                     ),
                   ),
@@ -365,7 +314,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          // Image on the extreme right that appears when a country is selected
+          // Next button Image on the extreme right that appears when a country is selected
           if (selectedCountry != null) ...[
             Padding(
               padding: const EdgeInsets.only(right: 40),

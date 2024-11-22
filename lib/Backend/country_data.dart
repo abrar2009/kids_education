@@ -2,6 +2,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
   'India': [
     {
       'backgroundImage': 'assets/images/indiaBG.png',
+      'boardImage': 'assets/images/indianCulture.png',
       'cloudText': 'India is vibrant, diverse, and rich in culture with colorful festivals, historic landmarks, and varied landscapes.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -10,6 +11,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG2.png',
+      'boardImage': 'assets/images/indianCulture.png',
       'cloudText': 'Let\'s see the culture of INDIA.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -18,8 +20,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG2.png',
-      'cloudText':
-          'India is famous for its culture, cinema, and beautiful nature.',
+      'boardImage': 'assets/images/indianCulture.png',
+      'cloudText': 'India is famous for its culture, cinema, and beautiful nature.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -27,6 +29,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG2.png',
+      'boardImage': 'assets/images/indiaLanguages.png',
       'cloudText': 'India has 22 languages.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -35,6 +38,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG2.png',
+      'boardImage': 'assets/images/indiaLanguages.png',
       'cloudText': 'Hindi is the main language.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -43,6 +47,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG3.png',
+      'boardImage': 'assets/images/tiger.png',
       'cloudText': 'Lets see the animals of INDIA.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -51,6 +56,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG3.png',
+      'boardImage': 'assets/images/tiger.png',
       'cloudText': 'The national animal of India is tiger.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -59,6 +65,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG3.png',
+      'boardImage': 'assets/images/peacock.png',
       'cloudText': 'The national bird of India is peacock.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -67,6 +74,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG4.png',
+      'boardImage': 'assets/images/khichdi.png',
       'cloudText': 'Lets see the food of INDIA.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -75,6 +83,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG4.png',
+      'boardImage': 'assets/images/khichdi.png',
       'cloudText': 'A popular Indian dish is khichdi.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -82,7 +91,17 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudAlignment': '-0.6,-0.1',
     },
     {
+      'backgroundImage': 'assets/images/indiaBG4.png',
+      'boardImage': 'assets/images/biryani.png',
+      'cloudText': 'Biryani is also popularized by Muslim communities.',
+      'characterImage': 'assets/images/ladyInSaree.gif',
+      'cloudImage': 'assets/images/Cloud.png',
+      'characterAlignment': '-0.75,0.9',
+      'cloudAlignment': '-0.6,-0.1',
+    },
+    {
       'backgroundImage': 'assets/images/indiaBG5.png',
+      'boardImage': 'assets/images/hockey.png',
       'cloudText': 'Lets see the sport of INDIA.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -91,6 +110,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG5.png',
+      'boardImage': 'assets/images/hockey.png',
       'cloudText': 'Hockey is a national sport in India.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -99,6 +119,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG5.png',
+      'boardImage': 'assets/images/SachinTendulkar.png',
       'cloudText': 'Sachin Tendulkar is known as the "God of Cricket."',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -107,6 +128,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG6.png',
+      'boardImage': 'assets/images/diwali.png',
       'cloudText': 'Lets see the festivals of INDIA.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -115,6 +137,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG6.png',
+      'boardImage': 'assets/images/diwali.png',
       'cloudText': 'Diwali is a famous festival in India.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -123,6 +146,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG6.png',
+      'boardImage': 'assets/images/holi.png',
       'cloudText': 'Holi is also famous festival in India.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -133,8 +157,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
   'USA': [
     {
       'backgroundImage': 'assets/images/usaWhiteHouse.png',
-      'cloudText':
-          'The USA is a large and diverse country with a mix of natural landscapes, vibrant cities, and a rich cultural heritage',
+      'boardImage': 'assets/images/English.png',
+      'cloudText': 'The USA is a large and diverse country with a mix of natural landscapes, vibrant cities, and a rich cultural heritage',
       'characterImage': 'assets/images/usaGirl.png',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.5,0.9',
@@ -142,6 +166,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG2.png',
+      'boardImage': 'assets/images/English.png',
       'cloudText': 'Lets see the culture of USA.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
@@ -150,8 +175,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG2.png',
-      'cloudText':
-          'The USA is a large and diverse country with a mix of natural landscapes, vibrant cities, and a rich cultural heritage.',
+      'boardImage': 'assets/images/StatueofLiberty.png',
+      'cloudText': 'The USA is famous for its cultural diversity, Hollywood, and iconic landmarks like the Statue of Liberty.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -159,6 +184,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG2.png',
+      'boardImage': 'assets/images/English.png',
       'cloudText': 'The main language in the USA is English',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
@@ -167,14 +193,16 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG2.png',
+      'boardImage': 'assets/images/English.png',
       'cloudText': 'Other languages spoken are Spanish and Chinese.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.75,0.9',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '-0.6,-0.1',
     },
     {
       'backgroundImage': 'assets/images/usaBG3.png',
+      'boardImage': 'assets/images/baldEagle.png',
       'cloudText': 'Lets see the animals of USA.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
@@ -183,7 +211,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG3.png',
-      'cloudText': 'The national animal of the USA is the bald eagle.',
+      'boardImage': 'assets/images/baldEagle.png',
+      'cloudText': 'The national bird of the USA is the bald eagle.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -191,7 +220,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG3.png',
-      'cloudText': 'The national mammal is the bison.',
+      'boardImage': 'assets/images/Bison.png',
+      'cloudText': 'The national animal of the USA is the bison. ',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -199,6 +229,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG4.png',
+      'boardImage': 'assets/images/baldEagle.png',
       'cloudText': 'Lets see the food of USA.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
@@ -207,15 +238,17 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG4.png',
-      'cloudText': 'Lets see the food of USA.',
+      'boardImage': 'assets/images/cheeseburger.png',
+      'cloudText': 'A popular American dish is a cheeseburger.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
-      'cloudAlignment': '-0.6,-0.1',
+      'cloudAlignment': '-0.5,-0.2',
     },
     {
       'backgroundImage': 'assets/images/usaBG4.png',
-      'cloudText': 'Hotdog',
+      'boardImage': 'assets/images/barbecueRibs.png',
+      'cloudText': 'Another popular dish is barbecue ribs.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -223,6 +256,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG5.png',
+      'boardImage': 'assets/images/cheeseburger.png',
       'cloudText': 'Lets see the sport of USA.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
@@ -231,7 +265,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG5.png',
-      'cloudText': 'Tom Brady has won 7 Super Bowl titles.',
+      'boardImage': 'assets/images/Baseball.png',
+      'cloudText': 'Baseball is considered the national sport of the USA.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -239,8 +274,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG5.png',
-      'cloudText':
-          'Basketball is also popular. Michael Jordan has 6 NBA Finals MVP awards.',
+      'boardImage': 'assets/images/Basketball.png',
+      'cloudText': 'Basketball was invented in the USA by James Naismith in 1891.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -248,16 +283,36 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/usaBG6.png',
+      'boardImage': 'assets/images/baldEagle.png',
       'cloudText': 'Lets see the festivals of USA.',
       'characterImage': 'assets/images/usaGirl2.png',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
+    {
+      'backgroundImage': 'assets/images/usaBG5.png',
+      'boardImage': 'assets/images/Thanksgiving.png',
+      'cloudText': 'Thanksgiving is a famous tradition celebrated every November.',
+      'characterImage': 'assets/images/usaGirl2.png',
+      'cloudImage': 'assets/images/Cloud.png',
+      'characterAlignment': '-0.75,0.9',
+      'cloudAlignment': '-0.6,-0.1',
+    },
+    {
+      'backgroundImage': 'assets/images/usaBG5.png',
+      'boardImage': 'assets/images/independenceDay.png',
+      'cloudText': 'Independence Day, celebrated on July 4th, is a major tradition in the USA.',
+      'characterImage': 'assets/images/usaGirl2.png',
+      'cloudImage': 'assets/images/Cloud.png',
+      'characterAlignment': '-0.75,0.9',
+      'cloudAlignment': '-0.6,-0.1',
+    },
   ],
   'Russia': [
     {
       'backgroundImage': 'assets/images/russiaBG.png',
+      'boardImage': 'assets/images/russianLanguage.png',
       'cloudText': 'Russia is the biggest country in the world',
       'characterImage': 'assets/images/russiaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -267,6 +322,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG.png',
+      'boardImage': 'assets/images/russianLanguage.png',
       'cloudText': 'Lets see the culture of RUSSIA.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -275,7 +331,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG2.png',
-      'cloudText': 'Russians love reading, dancing, and have beautiful churches.',
+      'boardImage': 'assets/images/richHistory.png',
+      'cloudText': 'Russia is famous for its vast landscapes, rich history, and cultural heritage.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,1',
@@ -283,6 +340,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG2.png',
+      'boardImage': 'assets/images/russianLanguage.png',
       'cloudText': 'The main language in Russia is Russian.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -290,15 +348,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudAlignment': '-0.6,-0.1',
     },
     {
-      'backgroundImage': 'assets/images/russiaBG2.png',
-      'cloudText': 'Other languages include Tatar and Bashkir.',
-      'characterImage': 'assets/images/russiaGirl2.gif',
-      'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.75,1',
-      'cloudAlignment': '-0.6,-0.1',
-    },
-    {
       'backgroundImage': 'assets/images/russiaBG3.png',
+      'boardImage': 'assets/images/russianLanguage.png',
       'cloudText': 'Lets see the animals of RUSSIA.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -307,6 +358,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG3.png',
+      'boardImage': 'assets/images/brownBearRussia.png',
       'cloudText': 'The national animal of Russia is the brown bear.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -315,7 +367,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG3.png',
-      'cloudText': 'The national animal of Russia is the brown bear.',
+      'boardImage': 'assets/images/double-headedEagle.png',
+      'cloudText': 'The national bird is the double-headed eagle.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,1',
@@ -323,6 +376,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG4.png',
+      'boardImage': 'assets/images/double-headedEagle.png',
       'cloudText': 'Lets see the food of RUSSIA.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -331,6 +385,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG4.png',
+      'boardImage': 'assets/images/borscht.png',
       'cloudText': 'A popular Russian dish is borscht, a beet soup.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -339,7 +394,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG4.png',
-      'cloudText': 'Pelmeni',
+      'boardImage': 'assets/images/Pelmeni.png',
+      'cloudText': 'Pelmeni (dumplings) is another popular dish in Russia.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,1',
@@ -347,6 +403,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG5.png',
+      'boardImage': 'assets/images/Pelmeni.png',
       'cloudText': 'Lets see the sport of RUSSIA.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -355,6 +412,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG5.png',
+      'boardImage': 'assets/images/iceHockey.png',
       'cloudText': 'Ice hockey is popular in Russia.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -363,7 +421,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG5.png',
-      'cloudText': 'Figure skating is also popular.',
+      'boardImage': 'assets/images/Chess.png',
+      'cloudText': 'Chess is highly popular in Russia, with many grandmasters originating from the country.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,1',
@@ -371,6 +430,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG6.png',
+      'boardImage': 'assets/images/Chess.png',
       'cloudText': 'Lets see the festivals of RUSSIA',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -379,8 +439,17 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/russiaBG6.png',
-      'cloudText':
-          'Maslenitsa is a festival that celebrates the end of winter.',
+      'boardImage': 'assets/images/Maslenitsa.png',
+      'cloudText': 'Maslenitsa is a famous festival in Russia, celebrating the end of winter.',
+      'characterImage': 'assets/images/russiaGirl2.gif',
+      'cloudImage': 'assets/images/Cloud.png',
+      'characterAlignment': '-0.75,1',
+      'cloudAlignment': '-0.6,-0.1',
+    },
+    {
+      'backgroundImage': 'assets/images/russiaBG6.png',
+      'boardImage': 'assets/images/victoryDay.png',
+      'cloudText': 'Victory Day (May 9) is a major holiday commemorating Russia\'s victory in World War II.',
       'characterImage': 'assets/images/russiaGirl2.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,1',
@@ -390,6 +459,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
   'Japan': [
     {
       'backgroundImage': 'assets/images/japanBG.png',
+      'boardImage': 'assets/images/japaneseLanguage.png',
       'cloudText': 'Japan is an island country known for its cool technology and old temples',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud2.png',
@@ -398,6 +468,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG2.png',
+      'boardImage': 'assets/images/japaneseLanguage.png',
       'cloudText': 'Lets see the culture of JAPAN.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -406,8 +477,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG2.png',
-      'cloudText':
-          'Japanese people value traditions like tea ceremonies and martial arts.',
+      'boardImage': 'assets/images/Culture.png',
+      'cloudText': 'Japanese people value traditions like tea ceremonies and martial arts.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -415,6 +486,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG2.png',
+      'boardImage': 'assets/images/japaneseLanguage.png',
       'cloudText': 'The main language in Japan is Japanese.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -423,14 +495,16 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG2.png',
+      'boardImage': 'assets/images/japaneseLanguage.png',
       'cloudText': 'They also enjoy drawing and cartoons.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.75,0.9',
+      'characterAlignment': '-0.1,0.9',
       'cloudAlignment': '-0.6,-0.1',
     },
     {
       'backgroundImage': 'assets/images/japanBG3.png',
+      'boardImage': 'assets/images/japaneseLanguage.png',
       'cloudText': 'Lets see the animals of JAPAN.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -439,6 +513,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG3.png',
+      'boardImage': 'assets/images/Green Pheasant.png',
       'cloudText': 'The national bird of Japan is Green Pheasant.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -447,7 +522,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG3.png',
-      'cloudText': 'The national fish of Japan is koi carp.',
+      'boardImage': 'assets/images/JapaneseMacaque.png',
+      'cloudText': 'The famous animal of Japan is the Japanese macaque.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -455,6 +531,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG4.png',
+      'boardImage': 'assets/images/JapaneseMacaque.png',
       'cloudText': 'Lets see the food of JAPAN.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -463,6 +540,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG4.png',
+      'boardImage': 'assets/images/Sushi.png',
       'cloudText': 'A popular Japanese dish is Sushi.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -471,7 +549,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG4.png',
-      'cloudText': 'Udon is also a popular dish in Japan.',
+      'boardImage': 'assets/images/Ramen.png',
+      'cloudText': 'Ramen is another popular dish in Japan.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -479,6 +558,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG5.png',
+      'boardImage': 'assets/images/Ramen.png',
       'cloudText': 'Lets see the sport of JAPAN.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -487,7 +567,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG5.png',
-      'cloudText': 'Baseball is very popular in Japan.',
+      'boardImage': 'assets/images/Sumo.png',
+      'cloudText': 'The national sport of Japan is sumo wrestling.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -495,7 +576,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG5.png',
-      'cloudText': 'Judo is also well-known.',
+      'boardImage': 'assets/images/japanBaseball.png',
+      'cloudText': 'Baseball is extremely popular in Japan, with many fans and professional teams.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -503,6 +585,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG6.png',
+      'boardImage': 'assets/images/japanBaseball.png',
       'cloudText': 'Lets see the festivals of JAPAN.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -511,7 +594,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG6.png',
-      'cloudText': 'Cherry Blossom is famous Festival in JAPAN.',
+      'boardImage': 'assets/images/Cherry Blossom Festiva.png',
+      'cloudText': 'The Cherry Blossom Festival (Hanami) is a famous tradition in Japan.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -519,7 +603,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/japanBG6.png',
-      'cloudText': 'Gion Matsuri Festival is also famous in JAPAN.',
+      'boardImage': 'assets/images/tanabata japan.png',
+      'cloudText': 'Tanabata is another famous festival, celebrating the meeting of two stars.',
       'characterImage': 'assets/images/japanGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -529,8 +614,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
   'United Kingdom': [
     {
       'backgroundImage': 'assets/images/ukBG.png',
-      'cloudText':
-          'The UK is famous for its monarchy, history, and iconic landmarks like Big Ben and Stonehenge.',
+      'boardImage': 'assets/images/English.png',
+      'cloudText': 'The UK is famous for its monarchy, history, and iconic landmarks like Big Ben and Stonehenge.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
       'characterAlignment': '0.5,0.9',
@@ -538,14 +623,16 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/ukBG.png',
+      'boardImage': 'assets/images/English.png',
       'cloudText': 'The main language of the UK is English.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.5,0.9',
+      'characterAlignment': '0.75,0.9',
       'cloudAlignment': '0.3,-0.1',
     },
     {
       'backgroundImage': 'assets/images/ukBG3.png',
+      'boardImage': 'assets/images/Lion.png',
       'cloudText': 'Lets see the animals of United Kingdom.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -554,22 +641,25 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/ukBG3.png',
+      'boardImage': 'assets/images/Lion.png',
       'cloudText': 'The national animal of the UK is the lion.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.65,1',
+      'characterAlignment': '0.75,1',
       'cloudAlignment': '0.5,-0.2',
     },
     {
       'backgroundImage': 'assets/images/ukBG3.png',
+      'boardImage': 'assets/images/Robin.png',
       'cloudText': 'The national bird is the European Robin.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.65,1',
+      'characterAlignment': '0.75,1',
       'cloudAlignment': '0.5,-0.2',
     },
     {
       'backgroundImage': 'assets/images/ukBG4.png',
+      'boardImage': 'assets/images/English.png',
       'cloudText': 'Lets see the food of United Kingdom.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -578,6 +668,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/ukBG4.png',
+      'boardImage': 'assets/images/Fish&Chips.png',
       'cloudText': 'Fish and chips is a classic British dish.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -586,6 +677,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/ukBG4.png',
+      'boardImage': 'assets/images/SundayRoast.png',
       'cloudText': 'Another popular dish is the Sunday roast.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -594,8 +686,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG5.png',
-      'cloudText':
-          'The UK doesn’t have an official national sport, but football is the most popular.',
+      'boardImage': 'assets/images/ukFootball.png',
+      'cloudText': 'The UK doesn’t have an official national sport, but football is the most popular.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -603,8 +695,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG5.png',
-      'cloudText':
-          'Wimbledon is the oldest tennis tournament in the world, held annually in London.',
+      'boardImage': 'assets/images/WimbledonTennis.png',
+      'cloudText': 'Wimbledon is the oldest tennis tournament in the world, held annually in London.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -612,6 +704,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/ukBG5.png',
+      'boardImage': 'assets/images/English.png',
       'cloudText': 'Lets see the festivals of United Kingdom.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -620,8 +713,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/ukBG5.png',
-      'cloudText':
-          'Bonfire Night is a famous tradition celebrated every November.',
+      'boardImage': 'assets/images/BonfireNight.png',
+      'cloudText': 'Bonfire Night is a famous tradition celebrated every November.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -629,8 +722,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/ukBG5.png',
-      'cloudText':
-          'The Changing of the Guard at Buckingham Palace is a popular tradition.',
+      'boardImage': 'assets/images/BigBen.png',
+      'cloudText': 'The Changing of the Guard at Buckingham Palace is a popular tradition.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -640,23 +733,25 @@ final Map<String, List<Map<String, String>>> countryContent = {
   'Italy': [
     {
       'backgroundImage': 'assets/images/italyBG.png',
-      'cloudText':
-          'Italy is famous for its art, architecture, and delicious cuisine, especially pasta and pizza.',
+      'boardImage': 'assets/images/italyArchitecture.png',
+      'cloudText': 'Italy is famous for its art, architecture, and delicious cuisine, especially pasta and pizza.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.7,0.8',
+      'characterAlignment': '0.5,0.8',
       'cloudAlignment': '0.4,-0.6',
     },
     {
       'backgroundImage': 'assets/images/italyBG2.jpg',
+      'boardImage': 'assets/images/ItalianLanguage.png',
       'cloudText': 'The main language spoken in Italy is Italian.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.7,0.9',
+      'characterAlignment': '0.75,0.9',
       'cloudAlignment': '0.4,-0.4',
     },
     {
       'backgroundImage': 'assets/images/italyBG3.png',
+      'boardImage': 'assets/images/ItalianLanguage.png',
       'cloudText': 'Lets see the animals of Italy.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -665,22 +760,25 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG3.png',
+      'boardImage': 'assets/images/italianWolf.png',
       'cloudText': 'The national animal of Italy is the Italian wolf.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.8,1',
+      'characterAlignment': '0.75,1',
       'cloudAlignment': '0.5,-0.1',
     },
     {
       'backgroundImage': 'assets/images/italyBG3.png',
+      'boardImage': 'assets/images/Italian sparrow.png',
       'cloudText': 'The national bird of Italy is the Italian sparrow.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.8,1',
+      'characterAlignment': '0.75,1',
       'cloudAlignment': '0.5,-0.1',
     },
     {
       'backgroundImage': 'assets/images/italyBG4.jpg',
+      'boardImage': 'assets/images/ItalianLanguage.png',
       'cloudText': 'Lets see the food of Italy.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -689,6 +787,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG4.jpg',
+      'boardImage': 'assets/images/pastaCarbonara.png',
       'cloudText': 'One popular Italian dish is pasta carbonara.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -697,6 +796,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG4.jpg',
+      'boardImage': 'assets/images/risotto.png',
       'cloudText': 'Another popular dish is risotto.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -705,6 +805,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG5.png',
+      'boardImage': 'assets/images/ItalianLanguage.png',
       'cloudText': 'Lets see the sport of Italy.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -713,6 +814,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG5.png',
+      'boardImage': 'assets/images/italyFootball.png',
       'cloudText': 'Football (soccer) is the most popular sport in Italy.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -721,6 +823,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG5.png',
+      'boardImage': 'assets/images/FIFAWorldCup.png',
       'cloudText': 'Italy has won four FIFA World Cup titles in football.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -729,6 +832,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG6.png',
+      'boardImage': 'assets/images/ItalianLanguage.png',
       'cloudText': 'Lets see the festivals of Italy.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -737,8 +841,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG6.png',
-      'cloudText':
-          'Carnival of Venice is a famous Italian festival known for its masks.',
+      'boardImage': 'assets/images/CarnivalofVenice.png',
+      'cloudText': 'Carnival of Venice is a famous Italian festival known for its masks.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -746,8 +850,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG6.png',
-      'cloudText':
-          'The Palio di Siena, a horse race, is another famous tradition in Italy.',
+      'boardImage': 'assets/images/horseRace.png',
+      'cloudText': 'The Palio di Siena, a horse race, is another famous tradition in Italy.',
       'characterImage': 'assets/images/italyBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -757,23 +861,25 @@ final Map<String, List<Map<String, String>>> countryContent = {
   'Kenya': [
     {
       'backgroundImage': 'assets/images/kenyaBG.png',
-      'cloudText':
-          'Kenya is famous for its wildlife safaris and the Masai Mara.',
+      'boardImage': 'assets/images/wildlifeSafaris.png',
+      'cloudText': 'Kenya is famous for its wildlife safaris and the Masai Mara.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.5,0.9',
+      'characterAlignment': '0.75,0.9',
       'cloudAlignment': '0.3,-0.4',
     },
     {
       'backgroundImage': 'assets/images/kenyaBG2.png',
+      'boardImage': 'assets/images/Swahili.png',
       'cloudText': 'Kenya has two official languages: Swahili and English.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.5,0.9',
+      'characterAlignment': '0.75,0.9',
       'cloudAlignment': '0.3,-0.1',
     },
     {
       'backgroundImage': 'assets/images/kenyaBG3.png',
+      'boardImage': 'assets/images/Lion.png',
       'cloudText': 'Lets see the animals of Kenya.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -782,22 +888,25 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/kenyaBG3.png',
+      'boardImage': 'assets/images/Lion.png',
       'cloudText': 'The national animal of Kenya is the lion.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.65,1',
+      'characterAlignment': '0.75,1',
       'cloudAlignment': '0.5,-0.2',
     },
     {
       'backgroundImage': 'assets/images/kenyaBG3.png',
+      'boardImage': 'assets/images/lilac-breasted roller.png',
       'cloudText': 'The national bird is the lilac-breasted roller.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.65,1',
+      'characterAlignment': '0.75,1',
       'cloudAlignment': '0.5,-0.2',
     },
     {
       'backgroundImage': 'assets/images/kenyaBG4.png',
+      'boardImage': 'assets/images/English.png',
       'cloudText': 'Lets see the food of Kenya.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -806,6 +915,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/kenyaBG4.png',
+      'boardImage': 'assets/images/kenyanUgali.png',
       'cloudText': 'A popular Kenyan dish is ugali, a maize flour porridge.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -814,6 +924,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/kenyaBG4.png',
+      'boardImage': 'assets/images/nyamaChoma.png',
       'cloudText': 'Nyama choma (grilled meat) is another popular dish.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -822,6 +933,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG5.png',
+      'boardImage': 'assets/images/English.png',
       'cloudText': 'Lets see the sport of Kenya.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -830,8 +942,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG5.png',
-      'cloudText':
-          'Athletics, especially long-distance running, is the most popular sport.',
+      'boardImage': 'assets/images/Athletics.png',
+      'cloudText': 'Athletics, especially long-distance running, is the most popular sport.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -839,8 +951,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG5.png',
-      'cloudText':
-          'Kenyan athletes dominate international marathons and distance running events.',
+      'boardImage': 'assets/images/internationalMarathons.png',
+      'cloudText': 'Kenyan athletes dominate international marathons and distance running events.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -848,6 +960,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/kenyaBG2.png',
+      'boardImage': 'assets/images/English.png',
       'cloudText': 'Lets see the festivals of Italy.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -856,6 +969,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/kenyaBG2.png',
+      'boardImage': 'assets/images/MaasaiMaraMigration.png',
       'cloudText': 'The Masai Mara Migration is a significant wildlife event.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -864,8 +978,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/kenyaBG2.png',
-      'cloudText':
-          'The Lamu Cultural Festival showcases traditional Swahili culture.',
+      'boardImage': 'assets/images/lamu.png',
+      'cloudText': 'The Lamu Cultural Festival showcases traditional Swahili culture.',
       'characterImage': 'assets/images/kenyaBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -875,8 +989,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
   'Brazil': [
     {
       'backgroundImage': 'assets/images/brazilBG.png',
-      'cloudText':
-          'Brazil is famous for its Amazon rainforest, carnival, and football.',
+      'boardImage': 'assets/images/Swahili.png',
+      'cloudText': 'Brazil is famous for its Amazon rainforest, carnival, and football.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
       'characterAlignment': '0.5,0.9',
@@ -884,14 +998,16 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/brazilBG2.png',
+      'boardImage': 'assets/images/Portuguese.png',
       'cloudText': 'The main language spoken in Brazil is Portuguese.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.5,0.9',
+      'characterAlignment': '0.75,0.9',
       'cloudAlignment': '0.3,-0.1',
     },
     {
       'backgroundImage': 'assets/images/brazilBG3.png',
+      'boardImage': 'assets/images/Portuguese.png',
       'cloudText': 'Lets see the animals of Brazil.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -900,22 +1016,25 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/brazilBG3.png',
+      'boardImage': 'assets/images/Jaguar.png',
       'cloudText': 'The national animal of Brazil is the jaguar.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.65,1',
+      'characterAlignment': '0.75,1',
       'cloudAlignment': '0.5,-0.2',
     },
     {
       'backgroundImage': 'assets/images/kenyaBG3.png',
+      'boardImage': 'assets/images/rufous-belliedThrush.png',
       'cloudText': 'The national bird of Brazil is the rufous-bellied thrush.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.65,1',
+      'characterAlignment': '0.75,1',
       'cloudAlignment': '0.5,-0.2',
     },
     {
       'backgroundImage': 'assets/images/indiaBG4.png',
+      'boardImage': 'assets/images/Portuguese.png',
       'cloudText': 'Lets see the food of Brazil.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -924,6 +1043,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG4.png',
+      'boardImage': 'assets/images/Feijoada.png',
       'cloudText': 'Feijoada, a black bean stew, is a popular dish.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -932,6 +1052,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/indiaBG4.png',
+      'boardImage': 'assets/images/Churrasco.png',
       'cloudText': 'Churrasco, Brazilian barbecue, is also well-known.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -940,6 +1061,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG5.png',
+      'boardImage': 'assets/images/Portuguese.png',
       'cloudText': 'Lets see the sport of Brazil.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -948,8 +1070,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG5.png',
-      'cloudText':
-          'Football (soccer) is Brazil\'s national and most popular sport.',
+      'boardImage': 'assets/images/brazilFootball.png',
+      'cloudText': 'Football (soccer) is Brazil\'s national and most popular sport.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -957,8 +1079,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/italyBG5.png',
-      'cloudText':
-          'Brazil has won the FIFA World Cup five times, more than any other country.',
+      'boardImage': 'assets/images/worldcup.png',
+      'cloudText': 'Brazil has won the FIFA World Cup five times, more than any other country.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -966,6 +1088,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/brazilBG4.png',
+      'boardImage': 'assets/images/Portuguese.png',
       'cloudText': 'Lets see the festivals of Brazil.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -974,6 +1097,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/brazilBG4.png',
+      'boardImage': 'assets/images/Carnival.png',
       'cloudText': 'Carnival is the most famous festival in Brazil.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -982,6 +1106,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/brazilBG4.png',
+      'boardImage': 'assets/images/festaJunina.png',
       'cloudText': 'Festa Junina is another popular Brazilian tradition.',
       'characterImage': 'assets/images/brazilBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -992,8 +1117,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
   'China': [
     {
       'backgroundImage': 'assets/images/chinaBG.png',
-      'cloudText':
-          'China is famous for its Great Wall, ancient history, and cultural heritage.',
+      'boardImage': 'assets/images/chineseLanguage.png',
+      'cloudText': 'China is famous for its Great Wall, ancient history, and cultural heritage.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud2.png',
       'characterAlignment': '0.5,0.9',
@@ -1001,14 +1126,16 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/chinaBG.png',
+      'boardImage': 'assets/images/chineseLanguage.png',
       'cloudText': 'The main language of China is Mandarin Chinese.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.5,0.9',
+      'characterAlignment': '0.75,0.9',
       'cloudAlignment': '0.3,-0.1',
     },
     {
       'backgroundImage': 'assets/images/chinaBG2.png',
+      'boardImage': 'assets/images/chineseLanguage.png',
       'cloudText': 'Lets see the animals of China.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -1017,22 +1144,25 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/chinaBG2.png',
+      'boardImage': 'assets/images/Giant Panda.png',
       'cloudText': 'The national animal of China is the giant panda.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.65,1',
+      'characterAlignment': '0.75,1',
       'cloudAlignment': '0.5,-0.2',
     },
     {
       'backgroundImage': 'assets/images/chinaBG2.png',
+      'boardImage': 'assets/images/red-crowned crane.png',
       'cloudText': 'The national bird of China is the red-crowned crane.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud2.png',
-      'characterAlignment': '0.65,1',
+      'characterAlignment': '0.75,1',
       'cloudAlignment': '0.5,-0.2',
     },
     {
       'backgroundImage': 'assets/images/chinaBG5.png',
+      'boardImage': 'assets/images/chineseLanguage.png',
       'cloudText': 'Lets see the food of China.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -1041,6 +1171,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/chinaBG5.png',
+      'boardImage': 'assets/images/Peking duck.png',
       'cloudText': 'Peking duck is a popular dish in China.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -1049,6 +1180,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/chinaBG5.png',
+      'boardImage': 'assets/images/Dis sum.png',
       'cloudText': 'Dim sum is also a well-loved traditional dish.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -1057,6 +1189,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/chinaBG3.png',
+      'boardImage': 'assets/images/chineseLanguage.png',
       'cloudText': 'Lets see the sport of China.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -1065,6 +1198,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/chinaBG3.png',
+      'boardImage': 'assets/images/Table tennis.png',
       'cloudText': 'Table tennis is considered the national sport of China.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -1073,8 +1207,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/chinaBG3.png',
-      'cloudText':
-          'China consistently dominates the sport of table tennis at the Olympics.',
+      'boardImage': 'assets/images/tableTennis-Olympic.png',
+      'cloudText': 'China consistently dominates the sport of table tennis at the Olympics.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -1082,6 +1216,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/chinaBG4.png',
+      'boardImage': 'assets/images/chineseLanguage.png',
       'cloudText': 'Lets see the festivals of China.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
@@ -1090,8 +1225,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/chinaBG4.png',
-      'cloudText':
-          'The Chinese New Year, also known as Spring Festival, is the most famous festival.',
+      'boardImage': 'assets/images/ChineseNewYear.png',
+      'cloudText': 'The Chinese New Year, also known as Spring Festival, is the most famous festival.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',
@@ -1099,8 +1234,8 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/chinaBG4.png',
-      'cloudText':
-          'The Mid-Autumn Festival is another important celebration in China.',
+      'boardImage': 'assets/images/Mid-AutumnFestival.png',
+      'cloudText': 'The Mid-Autumn Festival is another important celebration in China.',
       'characterImage': 'assets/images/chinaGirl.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.75,0.9',

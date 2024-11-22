@@ -134,76 +134,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                 itemBuilder: (context, index) {
                   String characterAlignmentString = currentCountryContent[_currentPage]['characterAlignment']!;
                   Alignment characterAlignment = _parseAlignment(characterAlignmentString);
-                  return /*Stack(
-                    children: [
-                      // Cloud Text
-                      Align(
-                        //alignment: AlignmentDirectional(-0.11, -0.3),
-                        alignment: _parseAlignment(
-                            currentCountryContent[index]['cloudAlignment']!),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              // Cloud Image with dynamic size
-                              SizedBox(
-                                width: cloudWidth,
-                                height: cloudHeight,
-                                child: Image.asset(
-                                  //'assets/images/Cloud.png',
-                                  currentCountryContent[index]['cloudImage']!,
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                              // Overlay Text on Cloud Image
-                              Padding(
-                                padding:
-                                const EdgeInsets.only(bottom: 20, right: 8),
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 16, vertical: 10),
-                                  width: cloudWidth,
-                                  child: Text(
-                                    //currentCountryContent[index]['cloudText']!,
-                                    wrappedText,
-                                    style: const TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.black,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                    maxLines: 6,
-                                    overflow: TextOverflow.visible,
-                                    softWrap: true,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-
-                      Align(
-                        alignment: _parseAlignment(currentCountryContent[index]
-                        ['characterAlignment']!),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Transform(
-                            alignment: Alignment.center,
-                            transform: Matrix4.identity()
-                              ..scale(-1.0, 1.0), // Mirror horizontally
-                            child: Image.asset(
-                              currentCountryContent[index]['characterImage']!,
-                              height: selectedImageHeight,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  );*/
-                    Stack(
+                  return Stack(
                       children: [
                         Column(
                         //mainAxisSize: MainAxisSize.min,
@@ -215,7 +146,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                               characterAlignment.x == 0
                                   ? characterAlignment.x + 0.3
                                   : (characterAlignment.x > 0
-                                  ? characterAlignment.x - 0.3
+                                  ? characterAlignment.x - 0.1
                                   : (characterAlignment.x >= -0.1
                                   ? characterAlignment.x + 0.3
                                   : characterAlignment.x)),
@@ -241,7 +172,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                                   ),
                                   // Overlay Text on Cloud Image
                                   Padding(
-                                    padding: const EdgeInsets.only(bottom: 30, right: 20),
+                                    padding: const EdgeInsets.only(bottom: 50, right: 20, left: 20),
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                                       width: cloudWidth,
@@ -282,19 +213,19 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                           ),
                         ],
                       ),
-                        if(characterAlignment.x <= -0.7)
+                        if(characterAlignment.x <= -0.7 || characterAlignment.x >= 0.7)
                         Align(
-                          alignment: Alignment(characterAlignment.x + 1.4, characterAlignment.y + 0.1),
+                          alignment: Alignment(
+                              characterAlignment.x >= 0.5
+                                  ? characterAlignment.x - 1.35
+                                  : characterAlignment.x + 1.35,
+                              characterAlignment.y + 0.18),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
-                            child: Transform(
-                              alignment: Alignment.center,
-                              transform: Matrix4.identity()..scale(-1.0, 1.0), // Mirror horizontally
-                              child: Image.asset(
-                                'assets/images/boardImage.png',
-                                height: selectedImageHeight + 50,
-                                fit: BoxFit.cover,
-                              ),
+                            child: Image.asset(
+                              currentCountryContent[index]['boardImage']!,
+                              height: selectedImageHeight + 80,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
@@ -305,10 +236,10 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
 
               // Next Button
               currentCountryContent.length - 1 == _currentPage
-                  ? SizedBox()
+                  ? const SizedBox()
                   : Positioned(
                 right: 20,
-                top: MediaQuery.of(context).size.height / 2,
+                top: MediaQuery.of(context).size.height / 2.2,
                 child: Bounce(
                   // filterQuality:FilterQuality.high,
                   onTap: () {
@@ -316,7 +247,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                     print(currentCountryContent.length);
                     if (_currentPage < currentCountryContent.length - 1) {
                       _pageController.nextPage(
-                        duration: const Duration(milliseconds: 300),
+                        duration: const Duration(milliseconds: 400),
                         curve: Curves.easeIn,
                       );
                     }
@@ -333,14 +264,14 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
               if (_currentPage > 0)
                 Positioned(
                   left: 20,
-                  top: MediaQuery.of(context).size.height / 2,
+                  top: MediaQuery.of(context).size.height / 2.2,
                   child: Bounce(
                     onTap: () {
                       print(_currentPage);
                       print(currentCountryContent.length);
                       if (_currentPage > 0) {
                         _pageController.previousPage(
-                          duration: const Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 400),
                           curve: Curves.easeIn,
                         );
                       }

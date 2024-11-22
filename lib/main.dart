@@ -6,12 +6,12 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Lock orientation to landscape
-  /*SystemChrome.setPreferredOrientations([
+  SystemChrome.setPreferredOrientations([
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
   ]).then((_) {
     runApp(const MyApp());
-  });*/
+  });
   runApp(const MyApp());
 }
 
