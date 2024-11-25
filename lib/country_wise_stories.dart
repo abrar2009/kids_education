@@ -213,8 +213,30 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                           ),
                         ],
                       ),
-                        if(characterAlignment.x <= -0.7 || characterAlignment.x >= 0.7)
-                        Align(
+                        //if(characterAlignment.x <= -0.7 || characterAlignment.x >= 0.7)
+                          Align(
+                            alignment: Alignment(
+                              characterAlignment.x >= 0.5
+                                  ? characterAlignment.x - 1.35
+                                  : characterAlignment.x + 1.35,
+                              characterAlignment.y + 0.18,
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: currentCountryContent[index].containsKey('boardImage') &&
+                                  currentCountryContent[index]['boardImage'] != null
+                                  ? Image.asset(
+                                currentCountryContent[index]['boardImage']!,
+                                height: selectedImageHeight + 80,
+                                fit: BoxFit.cover,
+                              ) : Container(
+                                height: selectedImageHeight + 80,
+                                color: Colors.transparent,
+                              ),
+                            ),
+                          ),
+
+                        /*Align(
                           alignment: Alignment(
                               characterAlignment.x >= 0.5
                                   ? characterAlignment.x - 1.35
@@ -228,7 +250,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                        ),
+                        ),*/
                       ]
                     );
                 },
