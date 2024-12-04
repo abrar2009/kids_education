@@ -25,6 +25,8 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
   PageController _pageController = PageController();
   int _currentPage = 0;
   bool _isAnimating = false;
+  int words_per_line = 0;
+  int numberOfLines = 0;
 
   // Sample data for demonstration
 
@@ -42,16 +44,15 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
 
   String wrapText(String text) {
     List<String> words = text.split(' ');
-    //int wordsPerLine = 6; // default is 4 words per line
-    int wordsPerLine = words.length >= 20 ? 6 : 5;
+    //int wordsPerLine = 4; // default is 4 words per line
+    int wordsPerLine = words.length >= 20 ? 6 : 4;
+    words_per_line = wordsPerLine;
     List<String> lines = [];
 
     // If the sentence has exactly 4 words, put the first 3 words on the first line and the last word on the second line
     if (words.length == 4 || words.length == 5) {
-      lines.add(
-          words.sublist(0, 3).join(' ')); // First 3 words in the first line
-      lines
-          .add(words.sublist(3).join(' ')); // Remaining word in the second line
+      lines.add(words.sublist(0, 3).join(' ')); // First 3 words in the first line
+      lines.add(words.sublist(3).join(' ')); // Remaining word in the second line
     } else {
       // For other cases, group words with at least 4 per line
       for (int i = 0; i < words.length; i += wordsPerLine) {
@@ -61,6 +62,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
       }
     }
 
+    numberOfLines = lines.length;
     return lines.join('\n'); // Join lines with line breaks
   }
 
@@ -116,9 +118,25 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
       // Measure the wrapped text size for the current page
       final cloudTextSize = _measureText(
         wrappedText,
-        TextStyle(fontSize: screenWidth >= 350 ? 18 : 20, fontWeight: FontWeight.w400),
+        TextStyle(fontSize: screenWidth < 1000 ? 18 : 20, fontWeight: FontWeight.w400),
         maxWidth: MediaQuery.of(context).size.width * 0.3,
       );
+
+      /*final cloudTextSize = _measureText(
+        wrappedText,
+        TextStyle(
+          fontSize: screenWidth < 1000 ? 16 : 20,
+          fontWeight: FontWeight.w400,
+        ),
+
+        maxWidth: (numberOfLines > 3 && words_per_line == 5)
+            ? MediaQuery.of(context).size.width * 0.35
+            : (words_per_line <= 5
+            ? MediaQuery.of(context).size.width * 0.5
+            : MediaQuery.of(context).size.width * 0.3),
+
+      );*/
+
 
       // Adjust the cloud size based on text size and number of lines
       int numOfLines = wrappedText.split('\n').length;
@@ -131,7 +149,7 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
       // Responsive adjustments for cloud size
       if (screenWidth < 1000) {
         // Mobile
-        cloudWidth = cloudTextSize.width + 75;
+        cloudWidth = cloudTextSize.width + 100;
       } else if (screenWidth >= 1280) {
         // Tablet
         cloudWidth = cloudTextSize.width + 260;
@@ -223,16 +241,17 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                                   ),
                                   // Overlay Text on Cloud Image
                                   Padding(
-                                    padding: EdgeInsets.only(bottom: screenWidth > 1000 ? 50 : 25, right: 20, left: 20),
+                                    padding: EdgeInsets.only(bottom: screenWidth > 1000 ? 35 : 25, right: 0, left: 0),
                                     child: Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                                       width: cloudWidth,
                                       child: Text(
                                         wrappedText,
                                         style: TextStyle(
-                                          fontSize: screenWidth > 1000 ? 24 : 15,
+                                          fontSize: screenWidth > 1000 ? 28 : 17,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.black,
+                                          height: 1.1,
                                         ),
                                         textAlign: TextAlign.center,
                                         maxLines: 6,

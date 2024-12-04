@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
 
                 // Determine alignmentY based on height
                 if (constraints.maxHeight >= 1000) {
-                  alignmentY = 0.5;
+                  alignmentY = 0.2;
                 } else if (constraints.maxHeight >= 750) {
                   alignmentY = -0.5;
                 } else if (constraints.maxHeight < 1000) {
@@ -284,7 +284,7 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(height: 20),
                   // Search Bar
                   Padding(
-                    padding: EdgeInsets.only(left: screenWidth < 1000 ? 20 : 30, right: screenWidth < 1000 ? 20 : 30),
+                    padding: EdgeInsets.only(left: 30, right: screenWidth < 1000 ? 20 : 30),
                     child: Container(
                       height: screenWidth < 1000 ? 45 : 60,
                       width: double.infinity,
@@ -317,7 +317,7 @@ class _HomePageState extends State<HomePage> {
                   // List of Countries with Name and Image
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.only(left: screenWidth < 1000 ? 20 : 30, right: screenWidth < 1000 ? 20 : 30),
+                      padding: EdgeInsets.only(left: 30, right: screenWidth < 1000 ? 20 : 30),
                       child: ListView(
                         children: filteredCountries.map((country) {
                           return countryListItem(

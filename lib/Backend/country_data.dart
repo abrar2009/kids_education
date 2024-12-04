@@ -3,7 +3,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
     {
       'backgroundImage': 'assets/images/indiaBG.png',
       //'boardImage': 'assets/images/indianCulture.png',
-      'cloudText': 'India is vibrant, diverse, and rich in culture with colorful festivals, historic landmarks, and varied landscapes.',
+      'cloudText': 'India is vibrant, diverse, rich in culture with colorful festivals, historic landmarks, & varied landscapes.',
       'characterImage': 'assets/images/ladyInSaree.gif',
       'cloudImage': 'assets/images/Cloud.png',
       'characterAlignment': '-0.4,0.9',
