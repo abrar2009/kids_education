@@ -107,7 +107,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    log('Home Page ${MediaQuery.of(context).size.height}');
+    log('Home Page height: ${MediaQuery.of(context).size.height}');
+    log('Home Page width: ${MediaQuery.of(context).size.width}');
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -141,9 +143,10 @@ class _HomePageState extends State<HomePage> {
                   alignmentY = 0.5;
                 } else if (constraints.maxHeight >= 750) {
                   alignmentY = -0.5;
-                } /*else if (constraints.maxHeight >= 750) {
-                  alignmentY = -0.3;
-                }*/ else {
+                } else if (constraints.maxHeight < 1000) {
+                  // For mobile devices
+                  alignmentY = -0.85;
+                } else {
                   alignmentY = 0; // Default case
                 }
 
@@ -160,6 +163,11 @@ class _HomePageState extends State<HomePage> {
                   alignmentX = 0.4;
                   imageWidthFactor = 0.35;
                   imageHeightFactor = 0.45;
+                } else if (constraints.maxWidth > 320 && constraints.maxWidth < 1000) {
+                  // For mobile devices
+                  alignmentX = 2.2;
+                  imageWidthFactor = 0.2;
+                  imageHeightFactor = 0.1;
                 } else {
                   alignmentX = 0.0; // Default case for other resolutions
                   imageWidthFactor = 0.3;
@@ -207,6 +215,12 @@ class _HomePageState extends State<HomePage> {
                 alignmentY = 0.9;
                 imageWidth = 600;
                 imageHeight = 400;
+              } else if (constraints.maxWidth >= 350 && constraints.maxWidth <= 900) {
+                // For mobile devices
+                alignmentX = 0.9;
+                alignmentY = 1.1;
+                imageWidth = 350;
+                imageHeight = 250;
               } else {
                 // Default case for other resolutions
                 alignmentX = 2;
@@ -219,9 +233,16 @@ class _HomePageState extends State<HomePage> {
                 alignment: Alignment(alignmentX, alignmentY),
                 child: SizedBox(
                   width: imageWidth,
-                  child: Image.asset(
+                  child: /*Image.asset(
                     selectedBoyImage,
                     height: imageHeight,
+                    fit: BoxFit.contain,
+                  ),*/
+                  Image.asset(
+                    selectedBoyImage,
+                    height: selectedBoyImage == 'assets/images/boy.png'
+                        ? (screenWidth < 1000 ? 320 : 550)
+                        : imageHeight,
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -232,7 +253,7 @@ class _HomePageState extends State<HomePage> {
           AnimatedPositioned(
             duration: const Duration(milliseconds: 500), // Duration of animation
             left: _animateBoxLeft
-                ? -MediaQuery.of(context).size.width * 0.38 // Move left when transitioning
+                ? -MediaQuery.of(context).size.width * 0.45 // Move left when transitioning
                 : 0, // Default position
             top: 0,
             bottom: 0,
@@ -248,13 +269,13 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 50),
+                  Padding(
+                    padding: EdgeInsets.only(top: screenWidth < 1000 ? 20 : 50),
                     child: Center(
                       child: Text(
                         'Select a Country',
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: screenWidth < 1000 ? 20 : 28,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -263,8 +284,9 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(height: 20),
                   // Search Bar
                   Padding(
-                    padding: const EdgeInsets.only(left: 50, right: 50),
+                    padding: EdgeInsets.only(left: screenWidth < 1000 ? 20 : 30, right: screenWidth < 1000 ? 20 : 30),
                     child: Container(
+                      height: screenWidth < 1000 ? 45 : 60,
                       width: double.infinity,
                       decoration: const BoxDecoration(
                         boxShadow: [
@@ -278,7 +300,9 @@ class _HomePageState extends State<HomePage> {
                       child: TextField(
                         controller: _searchController,
                         decoration: InputDecoration(
-                          hintText: 'Search Country',
+                          hintText: 'Search Country',hintStyle: TextStyle(
+                          fontSize: screenWidth < 1000 ? 20 : 24
+                        ),
                           prefixIcon: const Icon(Icons.search),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10.0),
@@ -289,11 +313,11 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 15),
                   // List of Countries with Name and Image
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 50, right: 50),
+                      padding: EdgeInsets.only(left: screenWidth < 1000 ? 20 : 30, right: screenWidth < 1000 ? 20 : 30),
                       child: ListView(
                         children: filteredCountries.map((country) {
                           return countryListItem(
@@ -352,12 +376,38 @@ class _HomePageState extends State<HomePage> {
                 },
                 child: Align(
                   alignment: Alignment.centerRight,
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      double imageSize;
+
+                      // Set the image size based on the screen width
+                      if (constraints.maxWidth >= 1000) {
+                        // For tablets and iPads
+                        imageSize = 100; // Larger size
+                      } else if (constraints.maxWidth >= 350) {
+                        // For medium screens (e.g., larger phones)
+                        imageSize = 60;
+                      } else {
+                        // For small screens (e.g., phones)
+                        imageSize = 60;
+                      }
+
+                      return Image.asset(
+                        'assets/images/next_btn.png',
+                        width: imageSize,
+                        height: imageSize,
+                      );
+                    },
+                  ),
+                ),
+                /*Align(
+                  alignment: Alignment.centerRight,
                   child: Image.asset(
                     'assets/images/next_btn.png',
                     width: 100,
                     height: 100,
                   ),
-                ),
+                ),*/
               ),
             ),
           ],
@@ -380,11 +430,12 @@ class _HomePageState extends State<HomePage> {
   // List Item with country name and image
   Widget countryListItem(String countryName, String assetPath, VoidCallback? onTap) {
     final bool isSelected = selectedCountry == countryName;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10.0),
+        padding: const EdgeInsets.symmetric(vertical: 12),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 300),
           decoration: BoxDecoration(
@@ -404,22 +455,22 @@ class _HomePageState extends State<HomePage> {
                 : [],
           ),
           child: Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.only(left: 12.0, right: 12, bottom: 12, top: 12),
             child: Row(
               children: [
                 // Country Flag
                 Image.asset(
                   assetPath,
-                  height: 50,
-                  width: 50,
+                  height: screenWidth < 1000 ? 35 : 70,
+                  width: screenWidth < 1000 ? 35 : 70,
                   fit: BoxFit.contain,
                 ),
-                const SizedBox(width: 40),
+                const SizedBox(width: 60),
                 // Country Name
                 Text(
                   countryName,
                   style: TextStyle(
-                    fontSize: 25,
+                    fontSize: screenWidth < 1000 ? 20 : 35,
                     fontWeight: FontWeight.bold,
                     color: isSelected ? Colors.black : Colors.black54,
                   ),

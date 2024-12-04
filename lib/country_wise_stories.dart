@@ -86,28 +86,59 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
     return Alignment.center; // Default alignment
   }
 
+  // Function to get responsive cloud image size based on screen width
+  double getResponsiveCloudImageSize(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    if (screenWidth <= 600) {
+      // Mobile
+      return 180.0; // Smaller cloud image
+    } else if (screenWidth <= 1200) {
+      // Tablet
+      return 230.0; // Medium cloud image
+    } else {
+      // iPad or larger
+      return 280.0; // Larger cloud image
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
       // Fetch content based on the selected country
       List<Map<String, String>> currentCountryContent = countryContent[widget.countryName] ?? [];
-
+      double screenWidth = MediaQuery.of(context).size.width;
+      double screenHeight = MediaQuery.of(context).size.height;
       double selectedImageHeight =
-      widget.countryName.toLowerCase() == '' ? 280 : 420;
+      widget.countryName.toLowerCase() == '' ? 420 : 420;
 
       String wrappedText = wrapText(currentCountryContent[_currentPage]['cloudText']!);
 
       // Measure the wrapped text size for the current page
       final cloudTextSize = _measureText(
         wrappedText,
-        const TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+        TextStyle(fontSize: screenWidth >= 350 ? 18 : 20, fontWeight: FontWeight.w400),
         maxWidth: MediaQuery.of(context).size.width * 0.3,
       );
 
       // Adjust the cloud size based on text size and number of lines
       int numOfLines = wrappedText.split('\n').length;
-      double cloudWidth = cloudTextSize.width + 260;
-      //double cloudHeight = cloudTextSize.height + (numOfLines * 30) + 100;
+      //double cloudWidth = cloudTextSize.width + 260;
+
+      // Determine screen width for responsive design
+
+      double cloudWidth;
+
+      // Responsive adjustments for cloud size
+      if (screenWidth < 1000) {
+        // Mobile
+        cloudWidth = cloudTextSize.width + 75;
+      } else if (screenWidth >= 1280) {
+        // Tablet
+        cloudWidth = cloudTextSize.width + 260;
+      } else {
+        // iPad or larger
+        cloudWidth = cloudTextSize.width + 260;
+      }
 
       return GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
@@ -118,8 +149,10 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
               // Dynamic Background Image
               Image.asset(
                 currentCountryContent[_currentPage]['backgroundImage']!,
-                width: MediaQuery.sizeOf(context).width * 1,
-                height: MediaQuery.sizeOf(context).height * 1,
+                //width: MediaQuery.sizeOf(context).width * 1,
+                //height: MediaQuery.sizeOf(context).height * 1,
+                width: double.infinity,
+                height: double.infinity,
                 fit: BoxFit.cover,
               ),
               // PageView for dynamic content
@@ -143,19 +176,37 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                           // Cloud with Text Overlay
                           Align(
                             alignment: Alignment(
-                              characterAlignment.x == 0
+                              screenWidth < 1000
+                                  ? (characterAlignment.x == 0
+                                  ? characterAlignment.x + 0.3 // If x == 0, add 0.2 when screenWidth < 1000
+                                  : characterAlignment.x + 0.2) // Add 0.2 directly when screenWidth < 1000
+                                  : (characterAlignment.x == 0
                                   ? characterAlignment.x + 0.3
                                   : (characterAlignment.x > 0
                                   ? characterAlignment.x - 0.1
                                   : (characterAlignment.x >= -0.1
                                   ? characterAlignment.x + 0.3
-                                  : characterAlignment.x)),
+                                  : characterAlignment.x))),
                               characterAlignment.y == 0
                                   ? characterAlignment.y + 0.3
                                   : (characterAlignment.y > 0
                                   ? characterAlignment.y - 0.3
                                   : characterAlignment.y),
                             ),
+                            /*Alignment(
+                                        characterAlignment.x == 0
+                                            ? characterAlignment.x + 0.3
+                                            : (characterAlignment.x > 0
+                                            ? characterAlignment.x - 0.1
+                                            : (characterAlignment.x >= -0.1
+                                            ? characterAlignment.x + 0.3
+                                            : characterAlignment.x)),
+                                        characterAlignment.y == 0
+                                            ? characterAlignment.y + 0.3
+                                            : (characterAlignment.y > 0
+                                            ? characterAlignment.y - 0.3
+                                            : characterAlignment.y),
+                                      ),*/
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: Stack(
@@ -172,14 +223,14 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                                   ),
                                   // Overlay Text on Cloud Image
                                   Padding(
-                                    padding: const EdgeInsets.only(bottom: 50, right: 20, left: 20),
+                                    padding: EdgeInsets.only(bottom: screenWidth > 1000 ? 50 : 25, right: 20, left: 20),
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                                       width: cloudWidth,
                                       child: Text(
                                         wrappedText,
-                                        style: const TextStyle(
-                                          fontSize: 24,
+                                        style: TextStyle(
+                                          fontSize: screenWidth > 1000 ? 24 : 15,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.black,
                                         ),
@@ -196,20 +247,55 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                           ),
 
                           // Character Image
-                          Align(
-                            alignment: characterAlignment,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Transform(
-                                alignment: Alignment.center,
-                                transform: Matrix4.identity()..scale(-1.0, 1.0), // Mirror horizontally
-                                child: Image.asset(
-                                  currentCountryContent[index]['characterImage']!,
-                                  height: selectedImageHeight,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
+                          LayoutBuilder(
+                              builder: (context, constraints){
+                                // Handle specific screen resolutions
+                                if (constraints.maxWidth == 2560 && constraints.maxHeight == 1600) {
+                                  // For 2560x1600 resolution
+
+                                  selectedImageHeight = 420;
+                                } else if (constraints.maxWidth == 1600 && constraints.maxHeight == 2560) {
+                                  // For 1600x2560 resolution
+                                  selectedImageHeight = 420;
+                                } else if (constraints.maxWidth > 1000 && constraints.maxWidth < 1500) {
+                                  // For iPads or similar-sized devices
+                                  selectedImageHeight = 420;
+                                } else if (constraints.maxWidth >= 350 && constraints.maxWidth <= 1000) {
+                                  // For mobile devices
+                                  selectedImageHeight = 240;
+                                } else {
+                                  // Default case for other resolutions
+                                  selectedImageHeight = 240;
+                                }
+                                return Align(
+                                  alignment: /*Alignment(
+                                      characterAlignment.x < 0
+                                      ? characterAlignment.x + 0.1
+                                      : characterAlignment.x,
+                                      characterAlignment.y),*/
+
+                                  Alignment(
+                                    characterAlignment.x == -0.4
+                                        ? characterAlignment.x
+                                        : characterAlignment.x + 0.1,
+                                    characterAlignment.y,
+                                  ),
+
+                                  //alignment: screenWidth >= 300 ? Alignment(characterAlignment.x + 0.1, characterAlignment.y + 1) : characterAlignment,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8),
+                                    child: Transform(
+                                      alignment: Alignment.center,
+                                      transform: Matrix4.identity()..scale(-1.0, 1.0), // Mirror horizontally
+                                      child: Image.asset(
+                                        currentCountryContent[index]['characterImage']!,
+                                        height: selectedImageHeight,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
                           ),
                         ],
                       ),
@@ -227,30 +313,15 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                                   currentCountryContent[index]['boardImage'] != null
                                   ? Image.asset(
                                 currentCountryContent[index]['boardImage']!,
-                                height: selectedImageHeight + 80,
+                                height: screenWidth < 1000 ? 290 : selectedImageHeight + 80,
                                 fit: BoxFit.cover,
                               ) : Container(
-                                height: selectedImageHeight + 80,
+                                //height: selectedImageHeight + 80,
+                                height: screenWidth < 1000 ? 290 : selectedImageHeight + 80,
                                 color: Colors.transparent,
                               ),
                             ),
                           ),
-
-                        /*Align(
-                          alignment: Alignment(
-                              characterAlignment.x >= 0.5
-                                  ? characterAlignment.x - 1.35
-                                  : characterAlignment.x + 1.35,
-                              characterAlignment.y + 0.18),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.asset(
-                              currentCountryContent[index]['boardImage']!,
-                              height: selectedImageHeight + 80,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),*/
                       ]
                     );
                 },
@@ -276,8 +347,8 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                   },
                   child: Image.asset(
                     'assets/images/next_btn.png',
-                    width: 100,
-                    height: 100,
+                    width: screenWidth > 1000 ? 100 : 60,
+                    height: screenWidth > 1000 ? 100 : 60,
                   ),
                 ),
               ),
@@ -301,8 +372,10 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
 
                     child: Image.asset(
                       'assets/images/previous_btn.png',
-                      width: 100,
-                      height: 100,
+                      //width: screenWidth >= 350 ? 60 : 100,
+                      //height: screenWidth >= 350 ? 60 : 100,
+                      width: screenWidth > 1000 ? 100 : 60,
+                      height: screenWidth > 1000 ? 100 : 60,
                     ),
                   ),
                 ),
@@ -322,8 +395,9 @@ class _CountryWiseStoriesWidgetState extends State<CountryWiseStoriesWidget> {
                     borderRadius: BorderRadius.circular(0),
                     child: Image.asset(
                       'assets/images/bonus_btn.png',
-                      width: MediaQuery.sizeOf(context).width * 0.1,
-                      height: MediaQuery.sizeOf(context).height * 0.1,
+                      width: screenWidth >=350 ? MediaQuery.sizeOf(context).width * 0.15 : MediaQuery.sizeOf(context).width * 0.1,
+                      height: screenWidth >=350 ? MediaQuery.sizeOf(context).height * 0.15 : MediaQuery.sizeOf(context).height * 0.1,
+                      //height: MediaQuery.sizeOf(context).height * 0.1,
                       fit: BoxFit.contain,
                     ),
                   ),

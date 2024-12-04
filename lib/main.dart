@@ -10,9 +10,12 @@ void main() {
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
   ]).then((_) {
-    runApp(const MyApp());
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky).then((_) {
+      runApp(const MyApp());
+    });
   });
-  runApp(const MyApp());
+  //runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {

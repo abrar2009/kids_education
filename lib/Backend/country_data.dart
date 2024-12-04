@@ -161,7 +161,7 @@ final Map<String, List<Map<String, String>>> countryContent = {
       'cloudText': 'The USA is a large and diverse country with a mix of natural landscapes, vibrant cities, and a rich cultural heritage',
       'characterImage': 'assets/images/usaGirl.png',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.5,0.9',
+      'characterAlignment': '-0.4,0.9',
       'cloudAlignment': '-0.2,-0.4',
     },
     {
@@ -622,11 +622,11 @@ final Map<String, List<Map<String, String>>> countryContent = {
     },
     {
       'backgroundImage': 'assets/images/ukBG3.png',
-      //'boardImage': 'assets/images/Lion.png',
       'cloudText': 'Lets see the animals of United Kingdom.',
       'characterImage': 'assets/images/ukBoy.gif',
       'cloudImage': 'assets/images/Cloud.png',
-      'characterAlignment': '-0.1,0.9',
+      //'characterAlignment': '-0.1,0.9',
+      'characterAlignment': '0,0.9',
       'cloudAlignment': '0.2,-0.1',
     },
     {
