@@ -215,12 +215,12 @@ class _HomePageState extends State<HomePage> {
                 alignmentY = 0.9;
                 imageWidth = 600;
                 imageHeight = 400;
-              } else if (constraints.maxWidth >= 350 && constraints.maxWidth <= 900) {
+              } else if (constraints.maxWidth >= 350 && constraints.maxWidth <= 1000) {
                 // For mobile devices
                 alignmentX = 0.9;
                 alignmentY = 1.1;
                 imageWidth = 350;
-                imageHeight = 250;
+                imageHeight = 280;
               } else {
                 // Default case for other resolutions
                 alignmentX = 2;
@@ -317,7 +317,7 @@ class _HomePageState extends State<HomePage> {
                   // List of Countries with Name and Image
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.only(left: 30, right: screenWidth < 1000 ? 20 : 30),
+                      padding: EdgeInsets.only(left: 50, right: screenWidth < 1000 ? 20 : 30),
                       child: ListView(
                         children: filteredCountries.map((country) {
                           return countryListItem(
